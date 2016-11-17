@@ -1,0 +1,269 @@
+<?php
+/**
+ *
+ */
+	$cli = (isset($_POST["cli"]) && !empty($_POST["cli"])) ? $_POST["cli"] : "0";
+	$pat = (isset($_POST["pat"]) && !empty($_POST["pat"])) ? $_POST["pat"] : "";
+	$sess = (isset($_POST["sess"]) && !empty($_POST["sess"])) ? $_POST["sess"] : "0";
+	$usr = (isset($_POST["usr"]) && !empty($_POST["usr"])) ? $_POST["usr"] : "1";
+	$ps = (isset($_POST["ps"]) && !empty($_POST["ps"])) ? $_POST["ps"] : "";
+	$packs = (isset($_POST["packs"]) && !empty($_POST["packs"])) ? $_POST["packs"] : "";
+	$income = (isset($_POST["income"]) && !empty($_POST["income"])) ? $_POST["income"] : "0";
+	$vndisc = (isset($_POST["vndisc"]) && !empty($_POST["vndisc"])) ? $_POST["vndisc"] : "0";
+        $bud = (isset($_POST["bud"]) && !empty($_POST["bud"])) ? $_POST["bud"] : "0";
+        $btrStr = (isset($_POST["btrstr"]) && !empty($_POST["btrstr"])) ? $_POST["btrstr"] : "";
+        $ttd_gto = (isset($_POST["gto"]) && !empty($_POST["gto"])) ? $_POST["gto"] : "";
+	$res = "ERROR";
+
+	if($pat != "" && $cli != "0" && $usr != "0" && $sess != "0") {
+
+		date_default_timezone_set("America/Mexico_City");
+
+		include "../config.inc.php";
+		include "patient.class.php";
+
+		$pat = utf8_decode($pat);
+		$patClass = new Patient($pat);
+		$pay = explode("|", $ps);
+                array_pop($pay);
+
+		$link = @mysql_connect($DBServer, $DBUser, $DBPaswd);
+                //$pmntotal = "0";
+		$sessnum = "1";
+		$query = "select ses_number from {$DBName}.session where ses_id = {$sess}";
+		if($result = @mysql_query($query, $link)) {
+			$sessnum = @mysql_result($result, 0);
+			@mysql_free_result($result);
+		}
+		$sessnum = is_null($sessnum) ? "1" : $sessnum;
+
+		$recnum = "1";
+		$query = "select max(rec_number) + 1 from {$DBName}.receipt where cli_id = {$cli}";
+		if($result = @mysql_query($query, $link)) {
+			$recnum = @mysql_result($result, 0);
+			@mysql_free_result($result);
+		}
+		$recnum = is_null($recnum) ? "1" : $recnum;
+
+		/** Obtiene el saldo del paciente. */
+		$bal = $patClass->getPatientBalance();
+		$bal = is_null($bal) ? 0 : $bal;
+
+        if($btrStr != ""){
+
+            $querybudnum = "SELECT bud_number, cli_id FROM {$DBName}.budtreat WHERE btr_id IN ({$btrStr})";
+            $execute = @mysql_query($querybudnum, $link);
+
+            $row = @mysql_fetch_row($execute);
+
+            list($bud_number, $cli_id) = $row;
+
+                @mysql_free_result($result);
+
+                $querybudid = "SELECT bud_id FROM {$DBName}.budget
+                               WHERE cli_id = {$cli_id} AND bud_number = {$bud_number}";
+
+                if($result2 = @mysql_query($querybudid, $link)){
+                    $bud_id = @mysql_result($result2, 0);
+                    @mysql_free_result($result2);
+                }
+
+
+        }
+        else{
+            $bud_id = 0;
+        }
+
+//if de saldo
+	if($bal>=0){
+		$query =  "update {$DBName}.treatsession set rec_number = {$recnum}";
+		if($vndisc != "0") {
+			$query .= ", agt_discount = {$vndisc}, trs_amount = (trp_price * (1 - ({$vndisc} / 100)))";
+			$income = $income * (1 - ($vndisc / 100));
+		}
+		$query .= " where ses_number = {$sessnum} and cli_id = {$cli}";
+		@mysql_query($query, $link);
+
+		$affected = 0;
+		$receiptids = array();
+		foreach($pay as $item => $value) {
+			/** Extrae los valores de la cadena a traves de un arreglo. */
+			list($payment, $meth, $ban, $ref) = explode("*", $value);
+
+			$query = "insert into {$DBName}.receipt set ses_number = {$sessnum}, pat_id = '{$pat}', ban_id = {$ban},
+			usr_id = {$usr}, cli_id = {$cli}, rec_number = {$recnum}, rec_date = '".date("Y-m-d")."',
+			rec_subject = '{$ref}', rec_amount = {$payment}, rec_paymeth = '{$meth}', rec_payment = {$income}";
+
+            if($bud_id != 0){
+
+                $query .= ", bud_id = {$bud_id}";
+
+            }
+
+			if($result = @mysql_query($query, $link)) {
+				if(@mysql_affected_rows($link) > 0) {
+					$affected++;
+					$receiptids[] = @mysql_insert_id($link);
+				}
+				@mysql_free_result($result);
+			}
+
+		}//fin del foreach
+		if($affected > 0) {
+			$res = "OK*".$recnum;
+		}
+	}//fin del if de saldo
+//parte editada por mi
+	else if($bal<0){
+                $debt = $bal;
+		$query =  "update {$DBName}.treatsession set rec_number = {$recnum}";
+		if($vndisc != "0") {
+			$query .= ", agt_discount = {$vndisc}, trs_amount = (trp_price * (1 - ({$vndisc} / 100)))";
+			$income = $income * (1 - ($vndisc / 100));
+		}
+		$query .= " where ses_number = {$sessnum} and cli_id = {$cli}";
+		@mysql_query($query, $link);
+
+		$affected = $pmdeuda = 0;
+		$receiptids = array();
+		foreach($pay as $item => $value) {
+			/** Extrae los valores de la cadena a traves de un arreglo. */
+			list($payment, $meth, $ban, $ref) = explode("*", $value);
+			$saldo=$bal*(-1);
+
+                        if($debt < 0){
+                           //$debt += $payment;
+//                           $paymentModif=$payment+$debt;
+                           $debt += $payment;
+//                           $paymentModif = ($paymentModif < 0) ? 0 : $paymentModif;
+                        }
+//                       else{
+                           $paymentModif = $payment;
+//                       }
+
+
+                       //if($paymentModif != 0){
+                                $query = "insert into {$DBName}.receipt set ses_number = {$sessnum}, pat_id = '{$pat}', ban_id = {$ban},
+                                usr_id = {$usr}, cli_id = {$cli}, rec_number = {$recnum}, rec_date = '".date("Y-m-d")."',
+                                rec_subject = '{$ref}', rec_amount = {$paymentModif}, rec_paymeth = '{$meth}', rec_payment = {$income}";
+
+                                if($bud_id != 0){
+
+                                    $query .= ", bud_id = {$bud_id}";
+
+                                }
+
+                                if($result = @mysql_query($query, $link)) {
+                                        if(@mysql_affected_rows($link) > 0) {
+                                                $affected++;
+                                                $receiptids[] = @mysql_insert_id($link);
+                                        }
+                                        @mysql_free_result($result);
+                                }
+                       //}
+                       $pmdeuda += $paymentModif;
+
+		}//fin del foreach
+
+                if($pmdeuda >= abs($bal)){
+
+                $query = "insert into {$DBName}.receipt set ses_number = {$sessnum}, pat_id = '{$pat}', ban_id = 0,
+			usr_id = {$usr}, cli_id = {$cli}, rec_number = {$recnum}, rec_date = '".date("Y-m-d")."',
+			rec_subject = '0', rec_amount = {$bal}, rec_paymeth = 'PD', rec_payment = {$income}";
+
+            if($bud_id != 0){
+
+                $query .= ", bud_id = {$bud_id}";
+
+            }
+
+			if($result = @mysql_query($query, $link)) {
+				if(@mysql_affected_rows($link) > 0) {
+					$affected++;
+					$receiptids[] = @mysql_insert_id($link);
+				}
+				@mysql_free_result($result);
+			}
+
+		if($affected > 0) {
+			$res = "OK*".$recnum;
+		}
+                }else{
+                     $newbal = $pmdeuda*(-1);
+                $query = "insert into {$DBName}.receipt set ses_number = {$sessnum}, pat_id = '{$pat}', ban_id = 0,
+			usr_id = {$usr}, cli_id = {$cli}, rec_number = {$recnum}, rec_date = '".date("Y-m-d")."',
+			rec_subject = '0', rec_amount = {$newbal}, rec_paymeth = 'PD', rec_payment = {$income}";
+
+            if($bud_id != 0){
+
+                $query .= ", bud_id = {$bud_id}";
+
+            }
+
+			if($result = @mysql_query($query, $link)) {
+				if(@mysql_affected_rows($link) > 0) {
+					$affected++;
+					$receiptids[] = @mysql_insert_id($link);
+				}
+				@mysql_free_result($result);
+			}
+
+		if($affected > 0) {
+			$res = "OK*".$recnum;
+		}
+                }
+
+	}//fin del else del if de saldo
+
+    $bal = $patClass->getPatientBalance();
+	$bal = is_null($bal) ? 0 : $bal;
+
+
+		//*** Apartado de comisiones
+//		$query = "update {$DBName}.fee set rec_number = {$recnum}, pat_balance = {$bal}
+//		where ses_id = {$sess} and cli_id = {$cli}";
+//		@mysql_query($query, $link);
+
+		foreach($receiptids as $item => $value) {
+			$query = "update {$DBName}.receipt set pat_balance = '{$bal}' where rec_id = {$value}";
+			@mysql_query($query, $link);
+		}
+
+//                    if($empid == 152 || $empid == 37 || $empid == 159 || $empid == 169 || $empid == 164) {
+//						$tcomm = 0;
+//				}
+//				if($bal < 0) {
+//					$feestatus = 1;
+//					$tcomm = 0;
+//				}
+//				else if($bal >= 0) {
+//					$feestatus = 4;
+//				}
+//
+//                $query2 = "update {$DBName}.fee set trs_payment = {$total},
+//					fee_base = {$base}, fee_profit = {$util}, fee_comm = {$tcomm},
+//					fee_status = {$feestatus}, fee_viewlast = 2, emp_id = {$empidupdate}
+//					where trs_id = {$trs_id}";
+//				@mysql_query($query2, $link);
+
+		// Cierra la conexion con la base de datos
+		@mysql_close($link);
+	}//fin del if principal
+	$result = explode("*", $res);
+
+
+
+        if($result[0] == "OK" && $btrStr != ""){
+
+            $updatepaid = "UPDATE {$DBName}.budtreat
+                            SET bun_paid = 1
+                            WHERE btr_id IN ({$btrStr})";
+
+            @mysql_query($updatepaid, $link);
+
+        }
+
+        echo $res;
+
+
+?>

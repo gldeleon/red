@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: "DIN Light", Arial, Helvetica;
+	cursor: default;
+	font-size:12px;
+}
+
+
+table#scheduleTable .title{
+	
+	 text-align: left;
+	
+}
+
+table#scheduleTable .content{
+	
+	 text-align: left;
+	
+}
+
+table#cliList td, table#scheduleTable td{
+	padding:5px;
+}
+
+table#schSelector .titles{
+	background-color: #AEDAE9;
+	color: #084C8D;
+	font-weight: bold;
+}
+
+table#cliList{
+	width:860px;
+}
+
+table#cliList th{
+	
+	background-color: #AEDAE9;
+	border: 1px solid #084C8D;
+	color: #084C8D;
+	font-weight: bold;
+	text-align:center;
+	padding: 5px;
+	
+}
+
+table#cliList td{
+	
+	background-color: #FFFFFF;
+	border: 1px solid #084C8D;
+	
+}
+
+.cliSel{
+    
+    position:fixed;
+    left:790px;
+    top:52px;
+    font-size:15px;
+    text-align:right;
+    width:300px;
+
+    
+}
+
+#optionsTable td{
+	padding: 4px;
+}
+
+#optionsTable td.title{
+	text-align: right;
+	font-weight: bold;
+}

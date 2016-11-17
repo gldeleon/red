@@ -1,0 +1,773 @@
+[06-Sep-2011 18:04:30] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:06:17] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:06:23] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:06:34] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:06:46] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:06:46] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:07:31] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:07:47] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:07:58] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:07:58] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:08:06] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:08:06] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:08:18] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:08:18] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:08:23] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:08:23] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:08:44] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[06-Sep-2011 18:08:44] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[06-Sep-2011 18:11:35] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[06-Sep-2011 18:11:35] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:13:44] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:13:46] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:13:53] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[06-Sep-2011 18:13:53] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:14:03] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:14:18] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[06-Sep-2011 18:14:18] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:14:40] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:14:45] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:14:52] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:15:04] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[06-Sep-2011 18:15:15] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[06-Sep-2011 18:15:15] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Sep-2011 08:32:37] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[12-Sep-2011 12:25:57] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[12-Sep-2011 12:25:57] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[12-Sep-2011 12:49:39] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[12-Sep-2011 12:49:39] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[12-Sep-2011 12:50:25] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[12-Sep-2011 12:50:25] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[12-Sep-2011 12:53:32] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 159
+[12-Sep-2011 12:53:32] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 164
+[26-Sep-2011 13:02:31] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[26-Sep-2011 13:02:57] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:16:12] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:23:40] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:23:51] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:24:09] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:28:22] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:40:25] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:40:25] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:40:38] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:40:38] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:41:10] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:41:10] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:41:21] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:41:21] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:41:31] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:41:31] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:42:03] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:42:03] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:42:52] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:42:52] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:43:20] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:43:20] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:49:36] PHP Warning:  call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 85
+[07-Nov-2011 16:49:36] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/kobemxco/public_html/dentalia/pruebas/lib/execQuery.class.php on line 88
+[07-Nov-2011 16:51:47] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:53:57] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:53:59] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:54:00] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:54:03] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:54:15] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:55:26] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:56:57] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:57:04] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:57:23] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:57:40] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:58:31] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:58:53] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:59:02] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:59:03] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[07-Nov-2011 16:59:21] PHP Fatal error:  Call to undefined function  restafechas() in /home2/kobemxco/public_html/dentalia/pruebas/modules/mod_spcschedule/classes/getEvents.php on line 116
+[31-Jan-2012 15:45:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:45:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:45:50] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:45:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:45:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:45:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:50] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:46:52] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:47:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:49:48] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:49:52] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:50:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:50:48] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:50:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:51:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:52:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:48] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:53:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:54:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:54:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:54:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:54:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 15:54:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:27:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:30:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:31:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:44] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:44] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:32:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:29] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:29] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:34:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:36:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:37:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:38:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:39:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:05] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:46] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:40:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:42] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:45] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:45] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:45] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:45] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:47] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:47] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:47] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:47] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:41:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:00] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:04] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:40] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:42:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:13] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:43:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:34] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:54] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:56] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:44:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:45:59] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:09] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:15] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:20] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:28] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:46:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:49:16] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:51:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:51:39] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:56:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:56:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:57:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:57:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:58:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 17:58:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:06] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:19] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:25] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:29] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:29] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:00:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:01:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:08] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:14] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:30] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:02:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:04:41] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:05:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:08:52] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:09:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:09:53] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:11:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:11:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:11:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:24:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:29:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:29:58] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:30:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:30:26] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:30:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:30:36] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:30:37] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:32:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:32:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:32:49] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:32:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:32:55] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:01] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:17] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:33:23] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:11] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:18] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:22] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:24] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:27] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:32] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:35] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:38] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:34:38] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:35:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:35:31] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:45:12] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:45:51] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:46:02] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:46:44] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:50:33] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:51:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[31-Jan-2012 18:51:07] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[01-Feb-2012 13:03:03] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[01-Feb-2012 13:04:21] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[01-Feb-2012 15:17:57] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/pruebas/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[07-Feb-2012 10:51:10] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[09-Feb-2012 13:03:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95
+[09-Feb-2012 13:03:43] PHP Warning:  mktime() expects parameter 6 to be long, string given in /home2/kobemxco/public_html/dentalia/lib/functions.inc.php on line 95

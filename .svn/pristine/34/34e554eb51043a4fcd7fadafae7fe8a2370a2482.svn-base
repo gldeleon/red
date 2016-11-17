@@ -1,0 +1,393 @@
+var ff = document.getElementById && !document.all;
+var uid;
+
+window.onload = function() {
+	var m = document.getElementById("m");
+	if(parseInt(document.body.clientHeight) > 8)
+		m.style.height = parseInt(document.body.clientHeight) - (40 * 2) - 3 + "px";
+	uid = eval("document.getElementById('cfg')." + (ff ? "textContent" : "innerText"));
+	var w = parseInt(document.body.clientWidth);
+	w = ff ? (w - 4) : w;
+	var mWin2 = document.getElementById("newPatient");
+	if(mWin2 != null && typeof(mWin2) != 'undefined') {
+		mWin2.style.left = ((w / 2) - (parseInt(mWin2.offsetWidth) / 2)) + "px";
+		mWin2.style.top = "0px";
+	}
+	mWin2.style.visibility = "hidden";
+	//if(ff) document.body.style.MozUserSelect = "none";
+	deleteMenu();
+	var payQty = document.getElementById("payQty");
+	payQty.focus();
+	var btnRemove = document.getElementById("btnRemove");
+	btnRemove.disabled = true;
+	btnRemove.className = "disabled";
+};
+
+function addToList(oSelect) {
+	var payQty = document.getElementById("payQty");
+	var payRef = document.getElementById("payRef");
+	var payMethod = document.getElementById("payMethod");
+	var payBank = document.getElementById("payBank");
+	var oSelect = document.getElementById(oSelect);
+	if(typeof(payQty) != 'undefined' && typeof(payRef) != 'undefined' &&
+	   typeof(payMethod) != 'undefined' && typeof(payBank) != 'undefined') {
+		var payQtyVal = payQty.value;
+		var payRefVal = payRef.value;
+		var payMethodVal = payMethod.options[payMethod.selectedIndex].value;
+		var payBankName = payBank.options[payBank.selectedIndex].text;
+		var payBankValue = payBank.options[payBank.selectedIndex].value;
+		var btnRemove = document.getElementById("btnRemove");
+		if(payQtyVal.length < 1) {
+			alert("Por favor ingresa una cantidad.");
+			payQty.focus();
+			return false;
+		}
+		if(payMethodVal == "0") {
+			alert("Selecciona una forma de pago.");
+			payMethod.focus();
+			return false;
+		}
+		if((payMethodVal == "TD" || payMethodVal == "TC") && (payRefVal.length < 1 || payBankValue < 1)) {
+			alert("La forma de pago seleccionada requiere que rellenes todos los campos.");
+			return false;
+		}
+		if(payRefVal.length < 1)
+			payRefVal = "0";
+		var payString = "$ " + payQtyVal + ".00 - " + payMethodVal;
+		if(payMethodVal == "TD" || payMethodVal == "TC")
+			payString += " - " + payBankName + " [" + payRefVal + "]";
+		var payValue = payQtyVal + "*" + payMethodVal + "*" + payBankValue + "*" + payRefVal;
+		// ES POSIBLE QUE AQUI SEA NECESARIO VALIDAR ALGUNAS COSAS
+		oSelect.options[oSelect.options.length] = new Option(payString, payValue);
+		payQty.value = "";
+		payRef.value = "";
+		payMethod.selectedIndex = 0;
+		payBank.selectedIndex = 0;
+		btnRemove.disabled = false;
+		btnRemove.className = "";
+		payQty.focus();
+	}
+}
+
+function removeFromList(oSelect) {
+	var oSelect = document.getElementById(oSelect);
+	/**
+	 * @var {Object} payQty Es el campo donde se captura el monto que debe
+	 * pagar el paciente.
+	 */
+	var payQty = document.getElementById("payQty");
+	var btnRemove = document.getElementById("btnRemove");
+
+	if(typeof(oSelect) == 'undefined' || oSelect == null) {
+		return false;
+	}
+	for(var i = 0; i < oSelect.options.length; i++) {
+		if(oSelect.options[i].selected) {
+			oSelect.options[i] = null;
+			break;
+		}
+	}
+	if(oSelect.options.length < 1) {
+		btnRemove.disabled = true;
+		btnRemove.className = "disabled";
+	}
+	payQty.value = "";
+	payQty.focus();
+}
+
+function updateBilling(oCheckBox, oCheckBoxCol, oDivSum, oDivSum2) {
+
+    var oCheckBoxCol = document.getElementsByName(oCheckBoxCol);
+	var oDivSum = document.getElementById(oDivSum);
+	var oDivSum2 = document.getElementById(oDivSum2);
+	var payList = document.getElementById("payList");
+    var trtId = document.getElementsByName("trtId");
+    var bundleCheck = document.getElementById("bundleCheck");
+    var resinasuma = 0;
+    var rcount = 0;
+    var limpsuma = 0;
+
+        if(typeof(oDivSum) != 'undefined' && oDivSum != null && typeof(oCheckBoxCol) != 'undefined'
+	&& oCheckBoxCol != null && oCheckBoxCol.length > 0) {
+		/* Inicia la suma en cero. */
+		var suma = 0;
+		/* Suma los precios de los tratamientos en la lista,
+		 * incluye descuentos.
+		 */
+		//alert(oCheckBoxCol.length);
+       for(var i = 0; i < oCheckBoxCol.length; i++) {
+			if(oCheckBoxCol[i].checked) {
+				suma += parseFloat(oCheckBoxCol[i].value);
+			}
+		}
+
+        for(var i = 0; i < trtId.length; i++){
+
+            var valor = trtId[i].value;
+            var newVal = valor.split("*", 2);
+
+            if(newVal[0] == "11" && rcount < 3){
+                resinasuma += parseInt(newVal[1]);
+                rcount++;
+            }
+
+            if(rcount <= 2){
+                if(newVal[0] == "4"){
+                    limpsuma += parseInt(newVal[1]);
+                }
+            }
+
+        }
+        //alert(resinasuma);
+        if(typeof(bundleCheck) != "undefined" && bundleCheck != null){
+
+            if(bundleCheck.checked == true){
+                suma = suma - resinasuma - limpsuma;
+            }
+
+        }
+
+		/* Modifica tambien el elemento de la lista de formas de pago
+		 * que coincida con un pago anticipado o saldo a favor del paciente.
+		 */
+		if(typeof(payList) != 'undefined' && payList != null) {
+			for(var i = 0; i < payList.options.length; i++) {
+				if(payList.options[i].value.indexOf("*PA*0*0") > -1) {
+					payList.options[i].value = suma + "*PA*0*0";
+					payList.options[i].text = "$ " + suma + ".00 - SALDO A FAVOR";
+					break;
+				}
+			}
+		}
+		/* Si la suma no es un numero, la convierte en cero. */
+		if(isNaN(suma)) {
+			suma = 0;
+		}
+		/* Le da formato a la suma, separando miles y decimales. */
+		suma = addSeparatorsNF(suma.toString(), ".", ".", ",");
+
+		/* Finalmente, modifica los valores de los subtotales. */
+		oDivSum.innerHTML = "$" + suma;
+        if(typeof(oDivSum2) != "undefined" && oDivSum2 != null){
+            oDivSum2.innerHTML = "$" + suma;
+        }
+	}
+	else {
+		return false;
+	}
+}
+
+function applyBalance(iAvail, iIncome) {
+	/**
+	 * @var {Object} payList Es la lista donde se agregan los tipos de pago
+	 * ofrecidos por el paciente.
+	 */
+	var payList = document.getElementById("payList");
+	/**
+	 * @var {Object} payQty Es el campo donde se captura el monto que debe
+	 * pagar el paciente.
+	 */
+	var payQty = document.getElementById("payQty");
+
+	/* Si la variable es nula, indefinida o no es un numero, entonces vale cero. */
+	if(typeof(iIncome) == 'undefined' || iIncome == null || isNaN(iIncome)) {
+		iIncome = 0;
+	}
+	/* Lo mismo que el caso anterior. */
+	if(typeof(iAvail) == 'undefined' || iAvail == null || isNaN(iAvail)) {
+		iAvail = 0;
+	}
+	/* Si el objeto existe y la variable es mayor a cero, entonces agrega
+	 * un elemento a la lista con el monto correspondiente.
+	 */
+	if(typeof(payList) != 'undefined' && payList != null && iAvail > 0) {
+		/**
+		 * @var {Array} aOptionVal Arreglo que almacenara las partes de las
+		 * que se compone un elemento de la lista.
+		 */
+		var aOptionVal = new Array();
+		/**
+		 * @var {Integer} iOptionsVal Es la suma de los montos de los elementos
+		 * de la lista, excepto el saldo a favor.
+		 * @var {Integer} iTotal Es la suma de los montos de los elementos de la
+		 * lista de metodos de pago.
+		 */
+		var iOptionsVal = 0, iTotal = 0;
+		/**
+		 * @var {Integer} iOptionBalAdded Es el elemento que procede de un saldo
+		 * a favor.
+		 */
+		var iOptionBalAdded = -1;
+
+		/* Busca en la lista aquel elemento que procede de un saldo a favor y
+		 * obtiene su indice, o si no lo encuentra, descompone el valor y suma el
+		 * monto de este al valor global.
+		 */
+		for (var i = 0; i < payList.options.length; i++) {
+			if (payList.options[i].value.indexOf("*PA*0*0") > -1) {
+				iOptionBalAdded = i;
+			}
+			else {
+				aOptionVal = payList.options[i].value.split("*");
+				iOptionsVal += parseInt(aOptionVal[0], 10);
+			}
+		}
+
+		if (iOptionsVal <= iAvail) {
+			if ((iAvail + iOptionsVal) <= iIncome) {
+				iTotal = iAvail;
+				/* Si el objeto existe y la variable es mayor a cero, entonces
+				 * le asinga el valor de la varibale.
+				 */
+				if(typeof(payQty) != 'undefined' && payQty != null && (iIncome - (iAvail + iOptionsVal)) > 0) {
+					payQty.value = iIncome - (iAvail + iOptionsVal);
+				}
+			}
+			else if ((iAvail - iOptionsVal) == iIncome) {
+				iTotal = iAvail - iOptionsVal;
+			}
+			else if ((iAvail + iOptionsVal) > iIncome) {
+				iTotal = iAvail - ((iAvail + iOptionsVal) - iIncome);
+			}
+		}
+		else if (iOptionsVal > iAvail) {
+			if ((iAvail + iOptionsVal) <= iIncome) {
+				iTotal = iAvail;
+				/* Si el objeto existe y la variable es mayor a cero, entonces
+				 * le asinga el valor de la varibale.
+				 */
+				if (typeof(payQty) != 'undefined' && payQty != null && (iIncome - (iAvail + iOptionsVal)) > 0) {
+					payQty.value = iIncome - (iAvail + iOptionsVal);
+				}
+			}
+			else if ((iAvail + iOptionsVal) > iIncome) {
+				iTotal = iAvail - ((iAvail + iOptionsVal) - iIncome);
+			}
+		}
+
+		if(iTotal > 0) {
+			/* Genera la cadena de valor de la opcion de la lista. */
+			var acValue = iTotal + "*PA*0*0";
+			/* Genera la cadena de texto de la opcion de la lista. */
+			var acString = "$ " + iTotal + ".00 - SALDO A FAVOR";
+			/* Si encontro una opcion de saldo a favor en la lista... */
+			if (iOptionBalAdded > -1) {
+				/* ...modifica el texto y valor de la opcion correcta. */
+				payList.options[iOptionBalAdded].value = acValue;
+				payList.options[iOptionBalAdded].text = acString;
+			}
+			else {
+				/* Agrega la opcion a la lista. */
+				payList.options[payList.options.length] = new Option(acString, acValue);
+			}
+		}
+	}
+}
+
+//http://www.mredkj.com/javascript/nfbasic.html
+
+function addSeparatorsNF(nStr, inD, outD, sep)
+{
+	nStr += '';
+	var dpos = nStr.indexOf(inD);
+	var nStrEnd = '';
+	if (dpos != -1) {
+		nStrEnd = outD + nStr.substring(dpos + 1, nStr.length);
+		nStr = nStr.substring(0, dpos);
+	}
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(nStr)) {
+		nStr = nStr.replace(rgx, '$1' + sep + '$2');
+	}
+	return nStr + nStrEnd;
+}
+
+function generateReceipt(oSelect, sessId, patId, oDivSum, oVNCheckBox, bud, btrStr, gto, wait, canceled) {
+
+        var boton = document.getElementById("save");
+        var loadImg = document.getElementById("loadImg");
+
+	if(typeof(sessId) == 'undefined' || sessId == null)
+		return false;
+	if(typeof(patId) == 'undefined' || patId == null)
+		return false;
+	var oSelect = document.getElementById(oSelect);
+	if(typeof(oSelect) == 'undefined' || oSelect == null)
+		return false;
+	var oVNCheckBox = document.getElementById(oVNCheckBox);
+	var iVNDiscount = (typeof(oVNCheckBox) != 'undefined' && oVNCheckBox != null && oVNCheckBox.checked)
+					? oVNCheckBox.value : 0;
+	var payString = "";
+	for(var j = 0; j < oSelect.options.length; j++)
+		payString += oSelect.options[j].value + "|";
+	if(payString == "") {
+		return false;
+	}
+        
+        boton.disabled = true;
+        boton.className = "disabled";
+        loadImg.style.display = "inline";
+        
+
+	var oDivSum = document.getElementById(oDivSum);
+
+	var iIncome = oDivSum.innerHTML.toString().replace("$", "").replace(",", "").replace(".", "");
+	iIncome = parseFloat(iIncome);
+	//alert(iIncome);
+
+	var sParams = "&cli=" + cli + "&pat=" + patId + "&sess=" + sessId + "&usr=" + uid + "&ps=" + payString + "&income=" + iIncome + "&vndisc=" + iVNDiscount + "&bud=" + bud + "&btrstr=" + btrStr + "&gto=" + gto;
+	//alert(sParams);
+	var valor = AjaxQuery("POST", "../classes/newReceipt.php", false, sParams);
+	//alert(valor);
+
+	if(valor.length > 0 && valor.indexOf("*") > -1) {
+		var aValue = valor.split("*");
+        if(aValue[0] == "OK") {
+			document.location.replace("getPayment.php?cli=" + cli + "&pat=" + patId + "&UPD=" + sessId + "&rec=" + aValue[1] + "&vnd=" + iVNDiscount + "&bud=" + bud + "&btrstr=" + btrStr + "&gto=" + gto + "&wait=" + wait + "&canceled=" + canceled);
+			top.rightFrame.bottomFrame.location.reload(true);
+		}
+	}
+	else {
+		alert("Error al procesar el cobro. Regreso: " + valor);
+	}
+}
+
+function openReceipt(rec, pat, wait, canceled, changed) {
+	 var sParams = "&rec=" + rec + "&cli=" + cli ;
+	var sURL = "../classes/receipt.php?" + sParams;
+	pWindow = window.open(sURL, "winDoc", "width=800, height=600, resizable=yes, status=yes, toolbar=no, menubar=no", true);
+	pWindow.focus();
+}
+
+function cancelReceipt(sessId, patId, iReceipt, bud, btrStr, gto) {
+	if(typeof(iReceipt) != 'undefined' && iReceipt != null) {
+		var sRes = confirm("Seguro que desea cancelar este recibo?");
+		if(sRes) {
+			var sReason = "";
+			var sParams = "&rec=" + iReceipt + "&pat=" + patId + "&cli=" + cli + "&reason=" + sReason + "&bud=" + bud + "&btrstr=" + btrStr + "&gto=" + gto;
+			alert(sParams);
+			var valor = AjaxQuery("POST", "../classes/cancelReceipt.php", false, sParams);
+			alert(valor);
+			if(typeof(valor) != 'undefined' && valor == "OK") {
+				document.location.replace("getPayment.php?cli=" + cli + "&pat=" + patId + "&UPD=" + sessId + "&bud=" + bud + "&btrstr=" + btrStr + "&gto=" + gto + "&canceled=1&rec=");
+				top.rightFrame.bottomFrame.location.reload(true);
+			}
+		}
+	}
+}
+
+function selectVNDiscount(vncheckbox) {
+	var oCheckBox = document.getElementById(vncheckbox);
+	if(typeof(oCheckBox) != 'undefined' && oCheckBox != null)
+		oCheckBox.checked = !oCheckBox.checked;
+	return false;
+}
+
+document.onclick = function() {
+	deleteMenu();
+	top.leftFrame.menuBehavior(null, true);
+};
+
+document.oncontextmenu = function() {
+	return true;
+};

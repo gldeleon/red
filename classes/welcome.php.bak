@@ -1,0 +1,112 @@
+<?php
+if (!isset($_SERVER['HTTP_REFERER']) || strlen($_SERVER['HTTP_REFERER']) < 1)
+    exit();
+session_name("pra8atuw");
+session_start();
+if (count($_SESSION) > 0)
+    extract($_SESSION);
+else {
+    $_SESSION = array();
+    session_destroy();
+    header("Location: logout.php");
+}
+
+/** Llama al archivo de configuracion. */
+include "../config.inc.php";
+
+$cli = (isset($_GET["profile"]) && !empty($_GET["profile"])) ? $_GET["profile"] : "0";
+$cli = (isset($_GET["cli"]) && !empty($_GET["cli"])) ? $_GET["cli"] : $cli;
+$uname = empty($uname) ? "Usuario" : $uname;
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?= $AppTitle; ?></title>
+        <link href="../red.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            /* [CDATA[ */
+            var cli = "<?= $cli; ?>";
+            /* ]] */
+        </script>
+        <script type="text/javascript" src="../modules/ajax.js"></script>
+        <script type="text/javascript" src="../modules/createMenu.js"></script>
+        <script type="text/javascript" src="../modules/welcome.js"></script>
+        <script type="text/javascript" src="../modules/newPatientDialog.js"></script>
+    </head>
+    <body>
+
+        <div id="cfg" style="display: none"><?= $uid; ?></div>
+        <div id="resFilter" style="top: 0px; left: 0px; overflow-x: hidden; overflow-y: scroll"></div>
+        <? include "newPatient.inc.php"; ?>
+        <div id="subMenu" style="position: absolute; visibility: hidden;"></div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="40" height="40" style="border-top: 1px solid #E6701D; border-left: 1px solid #E6701D;">&nbsp;</td>
+                <td width="40" height="40" style="border-top: 1px solid #E6701D;">&nbsp;</td>
+                <td style="border-top: 1px solid #E6701D;">&nbsp;</td>
+                <td width="40" height="40" style="border-top: 1px solid #E6701D;">&nbsp;</td>
+                <td width="40" height="40" style="border-top: 1px solid #E6701D; border-right: 1px solid #E6701D;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="40" height="40" style="border-left: 1px solid #E6701D;">&nbsp;</td>
+                <td width="40" height="40" style="background-color: #FDB031; border-bottom: 1px solid #E6701D; border-left: 1px solid #E6701D; border-top: 1px solid #E6701D;">&nbsp;</td>
+                <td width="100%" style="background-color: #FDB031; border-top: 1px solid #E6701D; border-bottom: 1px solid #E6701D"><label class="title1">BIENVENIDO A RED KOBE</label></td>
+                <td width="40" height="40" style="background-color: #00ABA9; border-bottom: 1px solid #E6701D; border-right: 1px solid #E6701D; border-top: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                <td width="40" height="40" style="border-right: 1px solid #E6701D;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="40" style="border-left: 1px solid #E6701D;">&nbsp;</td>
+                <td align="center" valign="middle" style="height: 100%; border-left: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                <td valign="bottom" align="left" style="height: 128px; border-bottom: 1px solid rgb(230, 112, 29);" id="mn" rowspan="2">
+                    <div style="float:left; width:625px;">		
+                        <p>Estimado(a) Doctor(a), para descargar el material publicitario, haz clic en el botón correspondiente:</p>
+                        <input type="button" onclick="location.href='descargaPDF.php?f=Poster_AXA.pdf'" class="large" value="Cartel AXA"> (51.8 MB)<br><br>
+                                    <input type="button" onclick="location.href='descargaPDF.php?f=Poster_SMNYL.pdf'" class="large" title="Cartel Seguros Monterrey New York Life" value="Cartel SMNYL"> (85.1 MB)<br><br>
+                                                <input type="button" onclick="location.href='descargaPDF.php?f=Lona_Axa.pdf'" class="large" value="Lona AXA"> (60.2 MB)<br><br>
+                                                            <input type="button" onclick="location.href='descargaPDF.php?f=Lona_SMNYL.pdf'" class="large" title="Lona Seguros Monterrey New York Life" value="Lona SMNYL"> (85.1 MB)<br><br>
+                                                                        </div>
+                                                                        <div style='text-align:center;float:right;width:400px;'>
+                                                                            <p>
+                                                                                A partir del 7 de noviembre
+
+                                                                                dejan de operar todos los planes de GEO
+
+                                                                                por lo tanto estos pacientes dejan de tener los
+
+                                                                                beneficios de dichos planes.
+
+                                                                                <br>
+                                                                                    <br>
+                                                                                        Favor de verificar el plan de su paciente antes de la atención.
+                                                                                        </p>
+                                                                                        </div>
+                                                                                        <div style="clear:both;"></div>
+                                                                                        </td>
+                                                                                        <!--  <td rowspan="2" align="left" valign="bottom" id="mn" style="height: 100%; border-bottom: 1px solid #E6701D;">
+                                                                                                <p>Estimado(a) Doctor(a), para descargar el material publicitario, haz clic en el bot&oacute;n correspondiente:</p>
+                                                                                                <input type="button" value="Cartel AXA" class="large" onclick="location.href='descargaPDF.php?f=Poster_AXA.pdf'" /> (51.8 MB)<br /><br />
+                                                                                                <input type="button" value="Cartel SMNYL" title="Cartel Seguros Monterrey New York Life" class="large" onclick="location.href='descargaPDF.php?f=Poster_SMNYL.pdf'" /> (85.1 MB)<br /><br />
+                                                                                                <input type="button" value="Lona AXA" class="large" onclick="location.href='descargaPDF.php?f=Lona_Axa.pdf'" /> (60.2 MB)<br /><br />
+                                                                                                <input type="button" value="Lona SMNYL" title="Lona Seguros Monterrey New York Life" class="large" onclick="location.href='descargaPDF.php?f=Lona_SMNYL.pdf'" /> (85.1 MB)<br /><br />
+                                                                                        </td>-->
+                                                                                        <td align="center" valign="middle" style="height: 100%; border-right: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                                                                                        <td width="40" style="border-right: 1px solid #E6701D;">&nbsp;</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="40" style="border-left: 1px solid #E6701D;">&nbsp;</td>
+                                                                                            <td width="40" height="40" style="border-left: 1px solid #E6701D; border-bottom: 1px solid #E6701D;">&nbsp;</td>
+                                                                                            <td width="40" height="40" style="border-right: 1px solid #E6701D; border-bottom: 1px solid #E6701D;">&nbsp;</td>
+                                                                                            <td width="40" style="border-right: 1px solid #E6701D;">&nbsp;</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="40" height="40" style="border-left: 1px solid #E6701D; border-bottom: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                                                                                            <td width="40" height="40" style="border-bottom: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                                                                                            <td style="border-bottom: 1px solid #E6701D;">&nbsp;</td>
+                                                                                            <td width="40" height="40" style="border-bottom: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                                                                                            <td width="40" height="40" style="border-right: 1px solid #E6701D; border-bottom: 1px solid #E6701D;"><img src="../images/spacer.gif" width="40" height="40" alt="" /></td>
+                                                                                        </tr>
+                                                                                        </table>
+
+                                                                                        </body>
+                                                                                        </html>

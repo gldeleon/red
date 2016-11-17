@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 20, 2016, 1:10:04 PM
+    Author     : gdeleon
+*/
+
+.kobe {
+	background-color: #FDB031;
+	border-top: 1px solid #E6701D;
+	border-bottom: 1px solid #E6701D;
+        color: #fff;
+}
+
+input[type="button"], input[type="submit"] {
+	border: none;
+	background-color: #811E53;
+	color: #FFF;
+	width: 75px;
+	height: 23px;
+	padding-bottom: 2px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.guardarclinic {
+    background-color: #811e53;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}

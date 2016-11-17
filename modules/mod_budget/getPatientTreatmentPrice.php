@@ -1,0 +1,184 @@
+<?php
+	$res = "";
+	if(isset($_POST["string"]) && !empty($_POST["string"])) {
+		$string = $_POST["string"];
+		list($pat, $cli, $txlist) = explode("|", $string);
+		$txlist = substr($txlist, 0, -1);
+		$txGroup = explode("*", $txlist);
+		$txCod = array();
+		$txQty = array();
+		foreach($txGroup as $key => $value) {
+			list($txc, $txq) = explode("=", $value);
+			array_push($txCod, $txc);
+			array_push($txQty, $txq);
+		}
+		$txCodList = implode(",", $txCod);
+
+		include "../../config.inc.php";
+
+		$link = @mysql_connect($DBServer, $DBUser, $DBPaswd);
+
+		//*** Determina la clase de la clinica
+		$cli_class = "1";
+		$query8 = "select clc_id from {$DBName}.clinic where cli_id = ".$cli;
+		if($result8 = @mysql_query($query8, $link)) {
+			$cli_class = @mysql_result($result8, 0);
+			@mysql_free_result($result8);
+		}
+		$cli_class = (is_null($cli_class) || $cli_class == "0") ? "1" : $cli_class;
+
+		//*** Determina el tipo de la clinica.
+		$cli_type = "1";
+		$query9 = "select clt_id from {$DBName}.clinic where cli_id = {$cli}";
+		if($result9 = @mysql_query($query9, $link)) {
+			$cli_type = @mysql_result($result9, 0);
+			@mysql_free_result($result9);
+		}
+		$cli_type = is_null($cli_type) ? "1" : $cli_type;
+		
+		$query = "select t.trt_id, t.trt_name, t.trt_abbr from {$DBName}.treatment
+		as t where t.trt_id in ({$txCodList})";
+		if($result = @mysql_query($query, $link)) {
+			while($row = @mysql_fetch_row($result)) {
+				$tid = $row[0];
+				$tabbr = $row[2];
+				$tdis = 0;
+				$agt_price = "";
+				
+        		/* Buscar el tratamiento en el Plan para el paciente. */
+				$queryjcc = "SELECT at.agt_inctreat, at.agt_incdisc, at.agt_discount, 
+				at.agt_price, p.agr_id, at.agt_incdiscgrp
+				FROM {$DBName}.agreetreat AS at
+				LEFT JOIN {$DBName}.patient AS p ON p.agr_id = at.agr_id
+				WHERE p.pat_id = '".utf8_decode($pat)."' AND at.trt_id = {$tid}
+				AND at.agt_date <= curdate() ORDER BY at.agt_date desc limit 1";
+				$resultjcc = mysql_query($queryjcc, $link);
+				list($agt_inctreat, $agt_incdisc, $agt_discount, $agt_price, $agr_id, 
+				$agt_incdiscgrp)= mysql_fetch_row($resultjcc);
+				/* Verifica si incluye tratamientos con descuento especial por cantidad, 
+				 * ej. Incluye dos resinas al 100% de descuento, y el resto a 70% */
+				if(($agt_inctreat != "") && ($agt_inctreat != "0")) {
+					$i = 0;
+					/* El tratamiento esta agrupado con otros */
+					if($agt_incdiscgrp != "0") {
+						$gta_grp = "0";
+						/* Obtiene la clave de grupo del tratamiento */
+						$queryjcc4 = "SELECT gr.gta_grp FROM {$DBName}.grptreatagr AS gr 
+						WHERE gr.trt_id = '{$tid}'";
+						$resultjcc4 = mysql_query($queryjcc4, $link);
+						if(@mysql_num_rows($resultjcc4) > 0) {
+							$gta_grp = @mysql_result($resultjcc4, 0);
+						}
+						/* Verifica que el grupo exista */
+						if(($gta_grp !== false) && $gta_grp > 0) {
+							/* Verifica si el paciente ya se hizo algun tratamiento de ese grupo */
+							$queryjcc5 = "select count(ts.trs_id) from {$DBName}.treatsession as ts
+							left join {$DBName}.session as s on s.ses_number = ts.ses_number and s.cli_id = ts.cli_id 
+							where s.pat_id = '".utf8_decode($pat)."' and s.ses_date between 
+							date_sub(curdate(), interval 1 year) and curdate() and ts.trt_id in (
+								select trt_id from {$DBName}.grptreatagr where gta_grp = '{$gta_grp}'
+							) and s.ses_status = 6";
+							if ($resultjcc5 = mysql_query($queryjcc5, $link)) {
+								$i += @mysql_result($resultjcc5, 0);
+							}
+							/* Verifica el numero de tratamientos en el presupuesto */
+							$queryjcc6 = "select count(bt.btr_id) from {$DBName}.budtreat as bt
+							left join {$DBName}.budget as b on b.bud_number = bt.bud_number and b.cli_id = bt.cli_id 
+							where b.pat_id = '".utf8_decode($pat)."' and b.bud_date between 
+							date_sub(curdate(), interval 1 year) and curdate() and bt.trt_id in (
+								select trt_id from {$DBName}.grptreatagr where gta_grp = '{$gta_grp}'
+							)";
+							if ($resultjcc6 = mysql_query($queryjcc6, $link)) {
+								$i += @mysql_result($resultjcc6, 0);
+							}
+							/* Compara la cuenta contra el numero de tratamientos incluidos y agrupados */
+							if($i <= $agt_inctreat) {
+								$tdis = $agt_incdisc;
+							} else {
+								$tdis = $agt_discount;
+							}
+						}
+						/* Si el grupo no existe */
+						else {
+							$trtGrpDoesntExists = true;
+						}
+					}
+					/* El tratamiento no esta agrupado */
+					/* Esta validacion debe ser excluyente de la anterior por el caso en que
+					 * el tratamiento se agrupo pero no existe el grupo como tal. */
+					if (($agt_incdiscgrp == "0") || isset($trtGrpDoesntExists)) {
+						/* Verifica el numero de tratamientos en sesion */
+						$queryjcc5 = "select count(ts.trs_id) from {$DBName}.treatsession as ts
+						left join {$DBName}.session as s on s.ses_number = ts.ses_number and s.cli_id = ts.cli_id 
+						where s.pat_id = '".utf8_decode($pat)."' and s.ses_date between 
+						date_sub(curdate(), interval 1 year) and curdate() and ts.trt_id = '{$tid}' 
+						and s.ses_status = 6";
+						if ($resultjcc5 = @mysql_query($queryjcc5, $link)) {
+							if (@mysql_num_rows($resultjcc5) > 0) {
+								$i += @mysql_result($resultjcc5, 0);
+							}
+						}
+						/* Verifica el numero de tratamientos en el presupuesto */
+						$queryjcc6 = "select count(bt.btr_id) from {$DBName}.budtreat as bt
+						left join {$DBName}.budget as b on b.bud_number = bt.bud_number and b.cli_id = bt.cli_id 
+						where b.pat_id = '".utf8_decode($pat)."' and b.bud_date between 
+						date_sub(curdate(), interval 1 year) and curdate() and bt.trt_id = '{$tid}'";
+						if ($resultjcc6 = mysql_query($queryjcc6, $link)) {
+							if (@mysql_num_rows($resultjcc6) > 0) {
+								$i += @mysql_result($resultjcc6, 0);
+							}
+						}
+						/* Compara la cuenta contra el numero de tratamientos incluidos */
+						if($i <= $agt_inctreat) {
+							$tdis = $agt_incdisc;
+						} else {
+							$tdis = $agt_discount;
+						}
+					}
+				}
+				/* El plan no incluye descuentos especiales por cantidad, se 
+				 * toma el descuento normal */
+				else {
+					$tdis = $agt_discount;
+				}
+				
+				$tdis = (is_null($tdis) || $tdis == "") ? "0" : $tdis;
+				$agt_price = is_null($agt_price || $agt_price == "") ? "" : $agt_price;
+				$agr_id = is_null($agr_id || $agr_id == "") ? "0" : $agr_id;
+				$tqty = intval($txQty[array_search($tid, $txCod)]);
+
+				//*** Determina el precio mas reciente del tratamiento.
+				$tprice = 0;
+				$query2 = "select t.trp_price from {$DBName}.treatprice as t
+				where t.trt_id = {$tid} and t.cli_class = {$cli_class} and
+				t.trp_date <= curdate() order by t.trp_date desc
+				limit 1";
+				if($result2 = @mysql_query($query2, $link)) {
+					$tprice = @mysql_result($result2, 0);
+					@mysql_free_result($result2);
+				}
+				$tprice = is_null($tprice) ? 0 : intval($tprice, 10);
+				
+				/* Obtiene planes o convenios con precios especiales */
+				$agrSpcPrice = array('31', '93');
+				/* Verifica que el precio del tratamiento no sea mayor al precio 
+				 * maximo del plan o convenio definido en $agrSpcPrice */
+				$agr_price = NULL;
+				if(($agt_price != "") && ($agt_price < $tprice) && (in_array($agr_id, $agrSpcPrice) !== false)) {
+					$agr_price = intval($agt_price, 10);
+				}
+				$tpricemod = $tprice;
+				$tpricemod = ($agr_price != NULL) ? $agr_price : $tpricemod;
+				$tdis = ($agr_price != NULL) ? ((1 - ($agr_price / $tprice)) * 100) : $tdis;
+				$factor = (1 - (intval($tdis, 10) / 100));
+				$factor = ($agr_price != NULL) ? 1 : $factor;
+				$tamount = $tpricemod * $factor * 1;
+				$res .= $tqty."*".$tid."*".utf8_encode($tabbr)."*".$tamount."|";
+			}
+			@mysql_free_result($result);
+			$res = substr($res, 0, -1);
+		}
+		@mysql_close($link);
+	}
+	echo $res;
+?>

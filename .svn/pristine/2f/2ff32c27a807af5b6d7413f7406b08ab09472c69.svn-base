@@ -1,0 +1,139 @@
+/* 
+    Document   : css
+    Created on : 12/10/2010, 10:43:47 AM
+    Author     : Victor Rivera
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+* {
+    font-family: "DIN Light", Arial, Helvetica;
+    font-size: 12px;
+    cursor: default;
+}
+
+#altaTable{
+
+    text-align:left;
+    width: 550px;
+
+}
+
+#altaTable td{
+
+    font-weight:bold;
+    color:#084C9D;
+
+}
+
+input[type=text], input[type=password], #lastname, #surename, #name{
+
+    border:1px solid #084C9D;
+    font-family: "DIN Light", Arial, Helvetica;
+    font-size: 12px;
+    width: 300px;
+
+}
+
+select {
+    border:1px solid #084C9D;
+    font-family: "DIN Light", Arial, Helvetica;
+    font-size: 12px;
+}
+
+#cel, #phone{
+
+    border:1px solid #084C9D;
+    font-family: "DIN Light", Arial, Helvetica;
+    font-size: 12px;
+    width: 150px;
+
+}
+
+.require{
+
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+
+#datos_empleado{
+    background-color:#084C9D;
+    /*border: 1px solid #084C9D;*/
+    width: 400px;
+    color: #084C9D;
+
+}
+
+#datos_empleado th{
+
+    background-color:#ABD9E9;
+    color:#084C9D;
+    font-weight: bold;
+    text-align:center;
+
+}
+
+#datos_empleado .titulo{
+
+    font-weight: bold;
+    background-color:#FFFFFF;
+    
+}
+
+#datos_empleado td{
+
+    background-color:#FFFFFF;
+
+}
+
+#datos_empleado .header{
+
+    background:#D7E6F4;
+    text-align:center;
+    text-transform: uppercase;
+
+}
+
+.notice{
+
+    font-family: "DIN Light", Arial, Helvetica;
+    font-size: 12px;
+    cursor: default;
+    text-align:left;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+#tabla_empleados{
+    background-color:#084C9D;
+    /*border: 1px solid #084C9D;*/
+    width: 800px;
+    color: #084C9D;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#tabla_empleados th{
+
+    background-color:#ABD9E9;
+    color:#084C9D;
+    font-weight: bold;
+    text-align:center;
+
+}
+
+#tabla_empleados td{
+
+    background-color:transparent;
+
+}
+
+#tabla_empleados tr:hover{
+
+    background-color: #dbe5f1;
+
+}

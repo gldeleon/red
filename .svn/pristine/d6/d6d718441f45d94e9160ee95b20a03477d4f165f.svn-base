@@ -1,0 +1,379 @@
+<?php
+	if(!isset($_SERVER['HTTP_REFERER']) || strlen($_SERVER['HTTP_REFERER']) < 1)
+		exit();
+	session_name("pra8atuw");
+	session_start();
+	if(count($_SESSION) > 0) {
+		extract($_SESSION);
+	}
+	else {
+		$_SESSION = array();
+		session_destroy();
+		header("Location: logout.php");
+	}
+	/** Llama al archivo de configuracion. */
+	include "../config.inc.php";
+	include "patient.class.php";
+
+	date_default_timezone_set("America/Mexico_City");
+
+	/** Carga variables URL y determina sus valores iniciales. */
+	$pat = (isset($_GET["pat"]) && !empty($_GET["pat"])) ? $_GET["pat"] : "";
+	$cli = (isset($_GET["cli"]) && !empty($_GET["cli"])) ? $_GET["cli"] : "0";
+	$UPD = (isset($_GET["UPD"]) && !empty($_GET["UPD"])) ? $_GET["UPD"] : "0";
+	$rec = (isset($_GET["rec"]) && !empty($_GET["rec"])) ? $_GET["rec"] : "0";
+	$agr = (isset($_GET["agr"]) && !empty($_GET["agr"])) ? $_GET["agr"] : "0";
+	$canceled = (isset($_GET["canceled"]) && !empty($_GET["canceled"])) ? $_GET["canceled"] : "0";
+	
+	$link = @mysql_connect($DBServer, $DBUser, $DBPaswd);
+	
+	$patClass = new Patient(utf8_decode($pat));
+	$patcomp = $patClass->getPatientCompleteName();
+	$patcomp = utf8_encode($patcomp);
+	$bal = $patClass->getPatientBalance();
+	$canceled = $changed = 0;
+
+	$ramount = 0;
+	if($rec != "0") {
+		$query = "select sum(rec_amount) from {$DBName}.receipt where rec_number = {$rec}
+		and pat_id = '".utf8_decode($pat)."' and cli_id = {$cli} and rec_paymeth != 'PD'";
+		if($result = @mysql_query($query, $link)) {
+			$ramount = @mysql_result($result, 0);
+			@mysql_free_result($result);
+		}
+		$ramount = is_null($ramount) ? 0 : floatval($ramount);
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><?=$AppTitle; ?></title>
+	<link href="../red.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript">
+	/*[CDATA[*/
+		var cli = "<?=$cli; ?>";
+	/*]]*/
+	</script>
+	<script type="text/javascript" src="../modules/jquery/prototype.js"></script>
+	<script type="text/javascript" src="../modules/ajax.js"></script>
+	<script type="text/javascript" src="../modules/createMenu.js"></script>
+	<script type="text/javascript" src="../modules/getPayment.js"></script>
+	<script type="text/javascript" src="../modules/newPatientDialog.js"></script>
+</head>
+<body>
+
+<div id="subMenu" style="position: absolute; visibility: hidden;"></div>
+<div id="cfg" style="display: none"><?=$uid; ?></div>
+<? include "newPatient.inc.php"; ?>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="outf1y2" style="border-left: 1px solid #E6701D;">&nbsp;</td>
+	<td id="pTd">Cobro (<?=$patcomp; ?>)</td>
+	<td class="outf1y2" style="border-right: 1px solid #E6701D;">&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="3" id="m">
+	<div style="width: 100%; height: 100%; overflow-y: scroll; overflow-x: hidden">
+	<form name="f">
+	<div style="height: 5px;"><img src="../images/spacer.gif" width="1" height="1" /></div>
+    <?php
+		$income = 0;
+		$sessnum = "0";
+		$query = "select ses_number, emp_id from {$DBName}.session where ses_id = ".$UPD;
+		if($result = @mysql_query($query, $link)) {
+			list($sessnum, $empid) = @mysql_fetch_row($result);
+			@mysql_free_result($result);
+		}
+    ?>
+	<table width="650" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #E6701D;" align="center">
+    <tr>
+    	<td colspan="7" class="list_header" style="font-size: 10px; background-color: #FDB031; text-align: left; padding-left: 5px;">TRATAMIENTOS REALIZADOS EN ESTA SESI&Oacute;N</td>
+    </tr>
+	<tr>
+    	<td class="list_header" width="20">&nbsp;</td>
+		<td class="list_header" width="30" style="font-size: 11px">Can</td>
+		<td class="list_header" width="" style="font-size: 11px">Tratamiento</td>
+		<td class="list_header" width="60" style="font-size: 11px">Precio U</td>
+		<td class="list_header" width="50" style="font-size: 11px">Descto</td>
+		<td class="list_header" width="60" style="font-size: 11px">Subtotal</td>
+        <td class="list_header" width="60" style="font-size: 11px">Pagado</td>
+	</tr>
+	<?php
+		
+		$gt = $gtp = $sgt = $txamount = $txcount = 0;
+		
+		/* Obtiene el monto total por pagar por tratamientos realizados. */
+		$query = "select count(trs_id), sum(trs_amount) from {$DBName}.treatsession
+		where ses_number = {$sessnum} and cli_id = {$cli}";
+		if($result = @mysql_query($query, $link)) {
+			list($txcount, $txamount) = @mysql_fetch_row($result);
+			$txcount = is_null($txcount) ? 0 : $txcount;
+			$txamount = is_null($txamount) ? 0 : $txamount;
+		}
+		
+		/* Obtiene la lista de tratamientos realizados durante la sesion. */
+		$query = "select ts.trs_id, ts.trt_id, ts.trs_qty, ts.trs_sessnum,
+		ts.trs_sessfrom, ts.cli_id, ts.trp_price, ts.agt_discount, ts.trs_amount,
+		ts.rec_number, t.trt_name, ts.trs_payment from {$DBName}.treatsession as ts
+		left join {$DBName}.treatment as t on t.trt_id = ts.trt_id
+		where ts.ses_number = {$sessnum} and ts.cli_id = {$cli}
+		order by t.trt_name, ts.trs_sessnum, ts.trs_sessfrom";
+		if($result = @mysql_query($query, $link)) {
+			if(@mysql_num_rows($result) > 0) {
+				while($row = @mysql_fetch_array($result, MYSQL_ASSOC)) {
+					$trs_id = $row['trs_id'];
+					$trt_id = $row['trt_id'];
+					$trt_count = $row['trs_qty'];
+					$trt_sessnum = is_null($row['trs_sessnum']) ? 1 : intval($row['trs_sessnum'], 10);
+					$trt_sessfrom = is_null($row['trs_sessfrom']) ? 1 : intval($row['trs_sessfrom'], 10);
+					$trt_name = utf8_encode($row['trt_name']).($trt_sessfrom > 1 ? (" (".$trt_sessnum."/".$trt_sessfrom.")") : "");
+					$discount = is_null($row['agt_discount']) ? 0 : intval($row['agt_discount'], 10);
+					$price = is_null($row['trp_price']) ? 0 : floatval($row['trp_price']);
+					$trp_price = "$".number_format($price, 0, ".", ",");
+					$trs_amount = is_null($row['trs_amount']) ? 0 : floatval($row['trs_amount']);
+					$tpayment = is_null($row['trs_payment']) ? 0 : floatval($row['trs_payment']);
+					$total = 0;
+
+					if($rec != "0") {
+						if(($ramount >= $txamount) && $txcount == 1) {
+							$total = $ramount;
+						}
+						else if(($ramount >= $txamount) && $txcount > 1) {
+							$total = $trs_amount;
+						}
+						else if(($ramount >= $trs_amount) && $txcount > 1) {
+							$total = $trs_amount;
+						}
+						else if($ramount < $trs_amount) {
+							//entra si el pago es menor al total a pagar
+							$total = $ramount;
+						}
+						/* Descuenta del monto total del recibo, el monto del tratamiento, ya pagado. */
+						$ramount = $ramount - $total;
+						if($total >= 0) {
+							//echo "total:".$total."<";
+							//*** Actualiza el pago del tratamiento.
+							$query2 = "update {$DBName}.treatsession set trs_payment = {$total}
+							where trs_id = {$trs_id}";
+							@mysql_query($query2, $link);
+						}
+					}
+					elseif($rec == "0") {
+						$total = $tpayment;
+					}
+					$gt += $trs_amount;
+					$gtp += $total;
+	?>
+	<tr>
+    	<td class="tx_list_item" style="font-size: 11px; text-align: center"><input type="checkbox" name="chkBunTxBill" value="<?=$trs_amount; ?>" checked="checked" disabled="disabled" /></td>
+		<td class="tx_list_item" style="font-size: 11px; text-align: center"><?=$trt_count; ?></td>
+		<td class="tx_list_item" style="font-size: 11px; padding-left: 3px;"><input type="hidden" name="trtId" value="<?=$trt_id."*".$trs_amount; ?>" /><?=((strlen($trt_name) < 1) ? "&nbsp;" : $trt_name); ?></td>
+		<td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px;"><?=((strlen($trp_price) < 1) ? "&nbsp;" : $trp_price); ?></td>
+		<td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px;"><?=($discount."%"); ?></td>
+		<td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px;"><?=("$".number_format($trs_amount, 0, ".", ",")); ?></td>
+        <td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px;"><?=("$".number_format($total, 0, ".", ",")); ?></td>
+	</tr>
+	<?php
+				} // !while($row = @mysql_fetch_row($result))
+				//echo ">{$gt}*{$gtp}>";
+                if($gt <= $gtp) {
+					$sgt = $gtp;
+				}
+				elseif($gt > $gtp) {
+					$sgt = $gt - $gtp;
+				}
+			} // !if($numrows > 0)
+		}
+		
+			$income = $gt;
+			$gt  = "$".number_format($gt, 0, ".", ",");
+    ?>
+    <tr>
+		<td class="tx_list_item" colspan="5" style="font-size: 11px; text-align: right; padding-right: 3px; font-weight: bold">Subtotal:</td>
+		<td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px; font-weight: bold"><div id="gtDiv"><?=$gt; ?></div></td>
+        <td class="tx_list_item" style="font-size: 11px; text-align: right; padding-right: 3px; font-weight: bold"><?=("$".number_format($gtp, 0, ".", ",")); ?></td>
+	</tr><?php
+		$color = ($rec != "0" && $income > $gtp) ? "#F00" : "#084C9D";
+		$legnd = ($rec != "0" && $income > $gtp) ? "Adeudo total" : (($rec == "0") ? "Total a pagar" : "Total pagado");
+		if($rec != "0") {
+	?>
+    <tr>
+    	<td class="tx_list_item" colspan="5" style="font-size: 12px; text-align: right; padding-right: 3px; font-weight: bold"><?=$legnd; ?>:</td>
+        <td class="tx_list_item" colspan="2" style="font-size: 12px; text-align: right; padding-right: 3px; font-weight: bold; color: <?=$color; ?>"><div id="sgtDiv"><?=("$".number_format($sgt, 0, ".", ",")); ?></div></td>
+    </tr>
+    <?php
+		}
+    ?>
+	</table>
+	<div style="height: 5px;"><img src="../images/spacer.gif" width="1" height="1" /></div>
+	<table width="650" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr>
+		<td width="400" align="left">
+		<div style="height: 5px;"><img src="../images/spacer.gif" width="1" height="1" /></div>
+		<table width="" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #E6701D;">
+		<tr>
+			<td colspan="4" class="list_header">Pago</td>
+		</tr>
+		<tr>
+			<td class="payment_item" style="font-size: 11px; font-weight: bold; padding-left: 3px;" align="left">Cantidad</td>
+			<td class="payment_item" style="font-size: 11px; font-weight: bold; padding-left: 3px;" align="left">Forma de pago</td>
+			<td class="payment_item" style="font-size: 10px; font-weight: bold; padding-left: 3px;" align="left">Referencia</td>
+			<td class="payment_item" style="font-size: 11px; font-weight: bold; padding-left: 3px;" align="left">Terminal</td>
+		</tr>
+		<tr>
+			<td class="payment_item" align="left" style="padding: 5px;">
+			<input id="payQty" name="payQty" type="text" value="" onfocus="this.select()" style="border: 1px solid #084C9D;" /></td>
+			<td class="payment_item" align="left" style="padding: 5px;">
+			<select id="payMethod" name="payMethod" style="border: 1px solid #084C9D;">
+				<option value="0">----</option>
+			<?php
+				$query = "select pmt_abbr, pmt_name from {$DBName}.paymethod where pmt_active = 1 order by pmt_id";
+				if($result = @mysql_query($query, $link)) {
+					while($row = @mysql_fetch_row($result)) {
+						echo "<option value=\"".$row[0]."\">".utf8_encode($row[1])."</option>\n";
+					}
+				}
+			?>
+			</select>
+			</td>
+			<td class="payment_item" align="left" style="padding: 5px;">
+			<input id="payRef" name="payRef" type="text" style="border: 1px solid #084C9D;" /></td>
+			<td class="payment_item" align="left" style="padding: 5px;">
+			<select id="payBank" name="payBank" style="border: 1px solid #084C9D;">
+				<option value="0">----</option>
+			<?php
+				$query = "select ban_id, ban_name from {$DBName}.bank where ban_term = 1 order by ban_name";
+				if($result = @mysql_query($query, $link)) {
+					while($row = @mysql_fetch_row($result)) {
+						echo "<option value=\"".$row[0]."\">".utf8_encode($row[1])."</option>\n";
+					}
+					@mysql_free_result($result);
+				}
+			?>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="payment_item" colspan="4" height="30">
+			<?php
+				$availcash = 0;
+				$needle = 0;
+				$disabled_large = " class=\"large_disabled\" disabled=\"disabled\"";
+				/* Si no existe recibo aun, pero el paciente tiene saldo a favor,
+				 * toma lo que sea necesario para completar el pago. Tambien habilita
+				 * el boton de saldo.
+				 */
+				if(isset($bal) && $bal > 0 && $rec == "0") {
+					$availcash = ($bal <= $income) ? $bal : (($bal > $income) ? $income : 0);
+					$needle = ($availcash < $income) ? ($income - $availcash) : 0;
+					$disabled_large = " class=\"large\"";
+				}
+                //echo "<p>".$bal." ".$availcash."</p>";
+				/* Si existe un recibo, deshabilita el boton. */
+				$disabled = ($rec != "0") ? " class=\"disabled\" disabled=\"disabled\"" : "";
+			?>
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td width="230"><input type="button"<?=$disabled_large; ?> style="padding-left: 0px;" value="Aplicar saldo" onclick="applyBalance(<?=$availcash; ?>, <?=$income; ?>)" title="Aplicar saldo a favor" /></td>
+				<td><input type="button"<?=$disabled; ?> value="Quitar" onclick="removeFromList('payList');" title="Quitar" id="btnRemove" />&nbsp;</td>
+				<td><input type="button"<?=$disabled; ?> value="Agregar" onclick="addToList('payList');" title="Agregar" /></td>
+			</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="payment_item" colspan="4" style="padding: 5px;">
+			<select id="payList" name="payList" multiple="multiple">
+			<?php
+				if($rec != "0") {
+					$query = "select r.rec_subject, r.rec_amount, r.rec_paymeth, r.ban_id, b.ban_name
+					from {$DBName}.receipt as r left join {$DBName}.bank as b on b.ban_id = r.ban_id
+					where rec_number = {$rec} and cli_id = {$cli} and ses_number = {$sessnum}";
+					if($result = @mysql_query($query, $link)) {
+						while($row = @mysql_fetch_row($result)) {
+							$acValue = $row[1]."*".$row[2]."*".$row[3]."*".$row[0];
+							$acString = "$ ".$row[1].".00 - ";
+							if($row[2] == "PA") {
+								$acString .= "SALDO A FAVOR";
+							}
+							else {
+								$acString .= $row[2];
+							}
+							if($row[2] != "EF" && $row[2] != "PA") {
+								$acString .= " - ".$row[4]." [".$row[0]."]";
+							}
+			?>
+				<option value="<?=$acValue; ?>" disabled="disabled"><?=$acString; ?></option>
+			<?php
+						}
+						@mysql_free_result($result);
+					}
+				}
+			?>
+			</select>
+			</td>
+		</tr>
+		</table>
+		</td>
+		<td width="200" valign="top" align="left">
+		<div style="height: 5px;"><img src="../images/spacer.gif" width="1" height="1" /></div>
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablasaldo" style="border: 1px solid #E6701D;">
+		<tr>
+			<td class="list_header">Saldo actual del Paciente</td>
+		</tr>
+		<tr>
+			<?php
+				if($bal < 0) {
+					$colorsaldo = "#D90000";
+				}
+				else {
+					$colorsaldo = "#084C9D";
+				}
+			?>
+			 <td class="payment_item" style="font-size: 11px; font-weight: bold; text-align: center; color: <?=$colorsaldo; ?>"">
+			 	<div id="saldo"><?=("$".number_format($bal, 0, ".", ","));?></div>
+			 </td>
+		</tr>
+		</table>
+  		<?php
+        	if($rec != "0") {
+		?>
+		<div style="height: 5px;"><img src="../images/spacer.gif" width="1" height="1" /></div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #E6701D;">
+		<tr>
+			<td colspan="3" class="list_header">Recibo</td>
+		</tr>
+		<tr>
+			<td width="" class="list_item" align="center"><?=$rec; ?></td>
+			<td width="20" class="list_item" align="center"><a href="javascript:void(0);" onclick="openReceipt('<?=$rec; ?>', '<?=($pat); ?>', '0', '<?=$canceled; ?>', '<?=$changed; ?>')" title="Imprimir"><img src="../images/printicon.gif" alt="Imprimir" width="18" height="18" border="0" style="cursor: pointer" /></a></td>
+			<td width="20" class="list_item" align="center"><a href="javascript:void(0);" onclick="cancelReceipt('<?=$UPD;?>', '<?=($pat); ?>', '<?=$rec; ?>');" title="Cancelar"><img src="../images/delticon.gif" alt="Cancelar" width="18" height="18" border="0" style="cursor: pointer" /></a></td>
+		</tr>
+		</table>
+        <?php
+        	}
+			else {
+				echo "&nbsp;";
+			}
+		?>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" height="30" valign="bottom" style="padding-right: 40px;"><span id="loading"><img src="../images/loader.gif" id="loadImg" style="display:none; vertical-align: middle;"/></span>
+			<input type="button" id="save" value="Cobrar" onclick="generateReceipt('payList', '<?=$UPD; ?>', '<?=$pat; ?>', 'gtDiv', 0, '<?=$canceled; ?>');" title="Cobrar"  style="margin-right: 5px"/>
+		</td>
+		<td>&nbsp;</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+	</td>
+</tr>
+<tr>
+	<td class="outf3y4"><img src="../images/outf4.gif" width="42" height="42" /></td>
+	<td class="wtbottom">&nbsp;</td>
+	<td class="outf3y4"><img src="../images/outf3.gif" width="42" height="42" /></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<?php
+	$string = (isset($_POST["string"]) && !empty($_POST["string"])) ? $_POST["string"] : "";
+	$cadena = (isset($_POST["cadena"]) && !empty($_POST["cadena"])) ? $_POST["cadena"] : "";
+	$affected = 0;
+
+	if($string != "") {
+		$sArray = explode("|", $string);
+		if(count($sArray) == 5) {
+			$sid = $sArray[0];
+			$cli = $sArray[1];
+			$pat = $sArray[2];
+			$thclass = $sArray[3];
+			$string = $sArray[4];
+			$sArray = explode("*", $string);
+			array_pop($sArray);
+
+			if(count($sArray) > 0) {
+				//*** Llama al archivo de configuracion.
+				include "../../config.inc.php";
+
+				/** Establece la zona horaria para trabajar con fechas. */
+				date_default_timezone_set("America/Mexico_City");
+//***************************************** fechas
+	$fechahoy = date("Y-m-d");
+
+	$hora = new DateTime();
+	$horaactual = $hora->format("H:i:s");
+
+	$fmd = new DateTime();
+	$fmd->modify("+16 days");
+
+	$findemesactual = new DateTime();
+	$findemes = $findemesactual->format("Y-m-t");
+
+	//***************************
+ 	$today = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+	$d = (int)date("d", $today);
+	$m = (int)date("m", $today);
+	$Y = (int)date("Y", $today);
+
+	//echo "$d / $m /$Y : dia= ";
+	if(($d >= '1' && $d <= '15')) {
+		$fechapagoinicial=	$findemes;
+		//echo "$d = $fechapagoinicial";
+	}
+	else if($d >= 16 && $d <= $findemes) {
+		$mesdespues1quincena = $fmd->format("Y-m-15");
+		$fechapagoinicial=	$mesdespues1quincena;
+		//echo "$d = $fechapagoinicial";
+	}
+
+//***************************************************************************************************************
+
+				$link = @mysql_pconnect($DBServer, $DBUser, $DBPaswd);
+
+				$sessnum = $empid = $comm = 0;
+				$sesdate = "";
+				$query = "select s.ses_number, s.emp_id, s.ses_date, e.emp_comm from {$DBName}.session as s
+				left join {$DBName}.employee as e on e.emp_id = s.emp_id
+				where s.ses_id = {$sid} and s.cli_id = {$cli}";
+				if($result = @mysql_query($query, $link)) {
+					list($sessnum, $empid, $sesdate, $foo) = @mysql_fetch_row($result);
+					@mysql_free_result($result);
+				}
+
+				//*** Determina el tipo y la clase de la clinica.
+				$cli_class = "2";
+				$cli_type = "1";
+				$query = "select clc_id, clt_id from {$DBName}.clinic where cli_id = {$cli}";
+				if($result = @mysql_query($query, $link)) {
+					list($cli_class, $cli_type) = @mysql_fetch_row($result);
+					@mysql_free_result($result);
+				}
+				$cli_class = is_null($cli_class) ? "2" : $cli_class;
+				$cli_type = is_null($cli_type) ? "1" : $cli_type;
+
+				//*** Obtiene el saldo del paciente.
+				$bal = 0;
+				$query = "select p.pagado - sum(s.suma) from (select sum(rec_amount) as pagado
+				from {$DBName}.receipt where pat_id = '".utf8_decode($pat)."' and rec_status = 0
+				and rec_paymeth != 'PA') as p, (select rec_payment as suma from {$DBName}.receipt
+				where pat_id = '".utf8_decode($pat)."' and rec_status = 0 group by rec_number) as s
+				group by p.pagado";
+				if($result = @mysql_query($query, $link)) {
+					$bal = @mysql_result($result, 0);
+					@mysql_free_result($result);
+				}
+				$bal = is_null($bal) ? 0 : intval($bal, 10);
+
+				if($sessnum != "0") {
+					foreach($sArray as $item => $value) {
+						//*** tratamiento, cantidad, numero de sesiones, sesion actual
+						// UPDATE 2009-09-06: se agrega: diente, caras (separadas
+						// por comas)
+						list($treat, $tqty, $sess, $sesscount, $thoot, $thcomb) = explode("=", $value); //14=1=2=1
+						$thoot = is_null($thoot) ? 0 : $thoot;
+						$thcomb = is_null($thcomb) ? "" : $thcomb;
+						// UPDATE 2010-05-08: se verifica que la cadena contenga alguna coma
+						// para validar correctamente los tratamientos de TotalDent
+						//echo '$thcomb='.$thcomb.'='.(int)is_numeric($thcomb);
+						if(strpos($thcomb, ",") === false && !is_numeric($thcomb)) {
+							$sfc = trim($thcomb);
+							$sfc_array = array("","V","D","P","M","O","","");
+			                $sfc_parts = str_split($sfc);
+			                $sfc_string = "";
+			                foreach($sfc_parts as $sfc_value) {
+			                	$sfcsr = array_search($sfc_value, $sfc_array);
+			                	if($sfcsr !== false) {
+			                		$sfc_string .= $sfcsr.",";
+			                	}
+			                }
+			                if(substr($sfc_string, -1) == ",") {
+			                	$sfc_string = substr($sfc_string, 0, -1);
+			                }
+			                $thcomb = $sfc_string;
+						}
+
+						list($btr_id, $bud_number, $tht_vpos, $tht_zpos) = explode("|", $cadena);
+						$bud_number = (is_null($bud_number) || $bud_number == "") ? "0" : $bud_number;
+
+						//*** Verifica que el precio del tratamiento se divida en
+						// sesiones. Obtiene tambien la clave de la especialidad del
+						// tratamiento.
+						$trt_divsess = $spc = 0;
+						$query7 = "select trt_divsess, spc_id from {$DBName}.treatment
+						where trt_id = {$treat}";
+						if($result7 = @mysql_query($query7, $link)) {
+							list($trt_divsess, $spc) = @mysql_fetch_row($result7);
+							@mysql_free_result($result7);
+						}
+						$trt_divsess = is_null($trt_divsess) ? 0 : intval($trt_divsess, 10);
+						//$comm = ($spc > 1 && $spc < 9) ? 30 : (($spc > 9 || $spc < 2) ? 0 : 40);
+						/*$spcArray = array("3", "4", "6", "7", "8", "11");
+						$comm = (array_search($spc, $spcArray) !== false) ? 40 : 30;
+						if($spc==0){$comm=0;}
+                                        else if($spc>0 && $spc<3){$comm=30;}
+                                        else if($spc>=3){$comm=40;}*/
+      					$comm = ($spc < 2) ? 0 : (($spc > 2) ? 40 : 30);
+      					if($empid == 89) $comm = 30;
+						if($empid == 33) $comm = 25;
+
+						$tdis = $tdiscomm = $agr_id = $agt_incdisc = "0";
+						$ag_price = "";
+
+						//*** Determina el precio o descuento del tratamiento si el
+						// paciente es de plan.
+						$query3 = "select at.agt_discount, at.agt_price, p.agr_id, at.agt_inctreat,
+						at.agt_incdisc, at.agt_incdiscgrp from {$DBName}.agreetreat as at
+						left join {$DBName}.patient as p on p.agr_id = at.agr_id
+						where p.pat_id = '".utf8_decode($pat)."' and at.trt_id = {$treat}
+						and at.agt_date <= '".date("Y-m-d")."' order by at.agt_date desc limit 1";
+						if($result3 = @mysql_query($query3, $link)) {
+							list($tdis, $ag_price, $agr_id, $agt_inctreat, $agt_incdisc,
+								 $agt_incdiscgrp) = @mysql_fetch_row($result3);
+							//$tdis = is_null($row3[0]) ? 0 : $row3[0];
+							//$ag_price = is_null($row3[1]) ? "" : $row3[1];
+							//$agr_id = is_null($row3[2]) ? "0" : $row3[2];
+							@mysql_free_result($result3);
+						}
+						$tdis = (is_null($tdis) || $tdis == "") ? "0" : $tdis;
+						$ag_price = is_null($ag_price) ? "" : $ag_price;
+						$agr_id = is_null($agr_id) ? "0" : $agr_id;
+						$agt_incdisc = is_null($agt_incdisc) ? "0" : $agt_incdisc;
+						$agt_incdiscgrp = ($agt_incdiscgrp == "1") ? "1" : "0";
+
+						//validar q el descuento original sea mayor de 30%
+
+						if(!is_null($agt_inctreat) && $agt_inctreat > 0) {
+							if($agt_incdisc > 0) {
+								$othertxid = "";
+								if($agt_incdiscgrp == "1") {
+									$query3 = "select trt_id from {$DBName}.treatgrouptx where tgr_id = (
+									select tgr_id from {$DBName}.treatgrouptx
+									where trt_id = {$treat} limit 1)";
+									if($result3 = @mysql_query($query3)) {
+										while($row3 = @mysql_fetch_row($result3)) {
+											$othertxid .= "ts.trt_id = ".$row3[0]." or ";
+										}
+										@mysql_free_result($query3);
+									}
+								}
+								if(strlen($othertxid) > 4) {
+									$othertxid = substr($othertxid, 0, -4);
+								}
+								else {
+									$othertxid = "ts.trt_id = {$treat}";
+								}
+								//echo $othertxid;
+								$query3 = "select sum(ts.trs_qty) from {$DBName}.session as s
+								left join {$DBName}.treatsession as ts on ts.cli_id = s.cli_id
+								and ts.ses_number = s.ses_number
+								left join {$DBName}.patient as p on p.pat_id = s.pat_id
+								where s.pat_id = '".utf8_decode($pat)."' and ({$othertxid})
+								and p.agr_id = {$agr_id} and ts.agt_discount = {$agt_incdisc}";
+								if($result3 = @mysql_query($query3)) {
+									if(@mysql_result($result3, 0) < $agt_inctreat) {
+										$tdis = $agt_incdisc;
+										$ag_price = "";
+									}
+									@mysql_free_result($result3);
+								}
+							}
+						}
+
+						$date = strtotime(date("Y-m-d"));
+						$date_ant = strtotime("2009-07-26");
+						if($cli_type == "3" && $agr_id == "0" && ($date > $date_ant)) {
+							$tdis = "10";
+						}
+
+						//*** Determina el precio mas reciente del tratamiento.
+						$tprice = 0;
+						$query2 = "select t.trp_price from {$DBName}.treatprice as t
+						where t.trt_id = {$treat} and t.cli_class = {$cli_class} and
+						t.trp_date <= '".date("Y-m-d")."' order by t.trp_date desc limit 1";
+						if($result2 = @mysql_query($query2, $link)) {
+							$tprice = @mysql_result($result2, 0);
+							@mysql_free_result($result2);
+						}
+						$tprice = is_null($tprice) ? 0 : intval($tprice, 10);
+
+						//*** Determina los costos del tratamiento.
+						$fcost = $scost = $lcost = "0";
+						$query4 = "select trc_fcost, trc_scost, trc_lcost
+						from {$DBName}.treatcost where trc_date <= '{$sesdate}'
+						and trt_id = {$treat} order by trc_date desc limit 1";
+						if($result4 = @mysql_query($query4, $link)){
+							list($fcost, $scost, $lcost) = @mysql_fetch_row($result4);
+							@mysql_free_result($result4);
+						}
+
+						//*** Determina el precio y costos del tratamiento si es de ortodoncia.
+						//*** Esto es TEMPORAL****************************************
+						$tpricecomm = "0";
+						$fcostcomm = $scostcomm = $lcostcomm = "0";
+						if($spc == "4") {
+							$query2 = "select t.trp_price from {$DBName}.treatprice as t
+							where t.trt_id = {$treat} and t.cli_class = {$cli_class} and
+							t.trp_date <= '2009-12-01' order by t.trp_date desc limit 1";
+							if($result2 = @mysql_query($query2, $link)) {
+								$tpricecomm = @mysql_result($result2, 0);
+								$tpricecomm = is_null($tpricecomm) ? "0" : $tpricecomm;
+								@mysql_free_result($result2);
+							}
+							$tpricecomm = is_null($tpricecomm) ? 0 : intval($tpricecomm, 10);
+
+							$query4 = "select trc_fcost, trc_scost, trc_lcost
+							from {$DBName}.treatcost where trc_date <= '2009-12-01'
+							and trt_id = {$treat} order by trc_date desc limit 1";
+							if($result4 = @mysql_query($query4, $link)){
+								list($fcostcomm, $scostcomm, $lcostcomm) = @mysql_fetch_row($result4);
+								$fcostcomm = is_null($fcostcomm) ? "0" : $fcostcomm;
+								$scostcomm = is_null($scostcomm) ? "0" : $scostcomm;
+								$lcostcomm = is_null($lcostcomm) ? "0" : $lcostcomm;
+								@mysql_free_result($result4);
+							}
+						}
+						else {
+							$tpricecomm = $tprice;
+							$fcostcomm = $fcost;
+							$scostcomm = $scost;
+							$lcostcomm = $lcost;
+							$tdiscomm = $tdis;
+						}
+
+						if($tpricecomm == 0 && $spc == "4") {
+							$tpricecomm = $tprice;
+							$fcostcomm = $fcost;
+							$scostcomm = $scost;
+							$lcostcomm = $lcost;
+						}
+
+						//*** Determina el costo fijo real.
+						$totsess = ($sess == 0) ? 1 : $sess;
+						$rfcost = $fcostcomm / $totsess;
+						$rfcostcomm = $fcostcomm / $totsess;
+						$rlcost = $lcostcomm / $totsess;
+						$rlcostcomm = $lcostcomm / $totsess;
+						$rfcost += $rlcost;
+
+						/** Verifica si existe otro precio presupuestado. */
+						$query7 = "select bt.bud_number, bt.trt_id, sum(bt.bud_qty), max(bt.trp_price), b.bud_date from
+						{$DBName}.budtreat as bt, (select cli_id, bud_number, bud_date from {$DBName}.budget where
+						pat_id = '".utf8_decode($pat)."' and cli_id > 0 and bud_date > '".date("Y-m-d", mktime(0, 0, 0, date("n") - 1, date("j"), date("Y")))."'
+						order by bud_date desc, bud_number limit 1) as b where b.bud_number = bt.bud_number and b.cli_id = bt.cli_id
+						group by bt.trt_id order by bt.trt_id";
+						if($result7 = @mysql_query($query7, $link)) {
+							while($row7 = @mysql_fetch_row($result7)) {
+								if($row7[1] == $treat) {
+									$query8 = "select trp_price from {$DBName}.treatprice
+									where cli_class = {$cli_class} and trt_id = {$treat} and trp_date <= '{$row7[4]}'
+									order by trp_date desc limit 1";
+									if($result8 = @mysql_query($query8, $link)) {
+										$budprice = @mysql_result($result8, 0);
+										$budprice = is_null($budprice) ? 0 : $budprice;
+										$tprice = intval($budprice, 10);
+										@mysql_free_result($result8);
+									}
+									break;
+								}
+							}
+							@mysql_free_result($result7);
+						}
+
+						//*** Verifica que el precio del tratamiento no sea mayor
+						// al precio maximo del plan o convenio, como en el caso de
+						// DentalFirst.
+						$ag_tprice = 0;
+						if($ag_price != "" && ($ag_price < $tprice)) {
+							$ag_tprice = intval($ag_price, 10);
+						}
+						$tpricemod = ($ag_price != "" && ($ag_price < $tprice)) ? $ag_tprice : $tprice;
+
+						$tpricemodcomm = ($ag_price != "" && ($ag_price < $tpricecomm)) ? $ag_tprice : $tpricecomm;
+
+						//*** Determina el diferencial del precio del tratamiento
+						// respecto al numero de sesiones en que se divide dicho
+						// tratamiento.
+						$price_diff = ($sess == 1 || $trt_divsess == 0) ? 1 : floatval(1 / $sess);
+
+						//*** Modifica el precio del tratamiento de acuerdo al
+						// diferencial de sesiones.
+						$tpricemod = $tpricemod * $price_diff;
+						$tpricemod = round($tpricemod);
+
+						$tpricemodcomm = $tpricemodcomm * $price_diff;
+						$tpricemodcomm = round($tpricemodcomm);
+
+						$tdis = ($ag_price != "" && ($ag_price < $tprice)) ? ((1 - ($ag_tprice / $tprice)) * 100) : $tdis;
+
+						$tdiscomm = ($ag_price != "" && ($ag_price < $tpricecomm)) ? ((1 - ($ag_tprice / $tpricecomm)) * 100) : $tdiscomm;
+
+						$factor = (1 - (intval($tdis, 10) / 100));
+						$factor = ($ag_price != "" && ($ag_price < $tprice)) ? 1 : $factor;
+
+						$factorcomm = (1 - (intval($tdiscomm, 10) / 100));
+						$factorcomm = ($ag_price != "" && ($ag_price < $tpricecomm)) ? 1 : $factorcomm;
+
+						$tamount = round($tpricemod * $factor * 1); //tqty
+						$tamountcomm = round($tpricemodcomm * $factorcomm * 1); //tqty
+
+						$tprice = round($tprice * $price_diff);
+						$tpricecomm = round($tpricecomm * $price_diff);
+
+						//*** Determina la base de la comision, respecto a la
+						// especialidad del tratamiento y el porcentaje de descuento.
+						$factorcomm = ($tdiscomm >= 50 && $spc > 2) ? 0.8 : (($tdiscomm >= 50 && $spc == 2) ? 0.5 : 1);
+						$base = ($tdiscomm < 50) ? $tamountcomm : ($tpricemodcomm * $factorcomm);
+
+						$tcost = $rfcost + $scostcomm;
+
+						//*** Determina la utilidad bruta.
+						$util = $base - $rfcost - $scostcomm;
+						$util = ($util < 0) ? 0 : $util;
+
+						$tcomm = $util * ($comm / 100);
+						if($treat == 36) $tcomm = 0;
+
+						if($empid == 152 || $empid == 37 || $empid == 159 || $empid == 169 || $empid == 164) {
+							$tcomm = 0;
+						}
+						if($bal < 0) {
+                            $feestatus = 1;
+                            $tcomm = 0;
+                        }
+                        else if($bal >= 0) {
+                            $feestatus = 4;
+                        }
+
+						//*** Determina la fecha de pago de la comision.
+						$sdArray = explode("-", $sesdate);
+						$today = mktime(0, 0, 0, $sdArray[1], $sdArray[2] + 16, $sdArray[0]);
+						$d = (int)date("d", $today);
+						$m = (int)date("m", $today);
+						$Y = (int)date("Y", $today);
+						if($d > 15) {
+							$mtfi = mktime(0, 0, 0, $m, 16, $Y);
+							$ld = (int)date("t", $mtfi);
+							$mtff = mktime(0, 0, 0, $m, $ld, $Y);
+						}
+						elseif($d < 15) {
+							$mtff = mktime(0, 0, 0, $m, 15, $Y);
+						}
+						$ff = @date("Y-m-d", $mtff);
+
+						for($j = 0; $j < $tqty; $j++) {
+							$trsid = "0";
+							$query = "insert into {$DBName}.treatsession set ses_number = {$sessnum}, trt_id = {$treat},
+							trs_sessnum = {$sesscount}, trs_sessfrom = {$sess}, cli_id = {$cli}, trp_price = {$tprice},
+							agt_discount = {$tdis}, trs_amount = {$tamount}, rec_number = 0, tht_id = {$thoot},
+							trt_comb = '{$thcomb}', tht_class = '{$thclass}', btr_id = {$btr_id}, bud_number = {$bud_number},
+							tht_vpos = '{$tht_vpos}', tht_zpos = '{$tht_zpos}'";
+							@mysql_query($query, $link);
+							if(@mysql_affected_rows($link) !== false) {
+								$affected++;
+								$trsid = @mysql_insert_id($link);
+							}
+							//echo $trsid;
+							//*** Apartado de comisiones.
+						}
+						if(($sess > 1) && ($sesscount < $sess)) {
+							for($j = 0; $j < $tqty; $j++) {
+								for($i = $sesscount; $i < $sess; $i++) {
+									$query4 = "insert into {$DBName}.treatprog set pat_id = '".utf8_decode($pat)."',
+									trt_id = {$treat}, tpg_sessnum = ".($i + 1).", tpg_sessfrom = {$sess},
+									trp_price = {$tprice}, agt_discount = {$tdis}, trs_amount = {$tamount},
+									tht_id = {$thoot}, trt_comb = '{$thcomb}', tht_class = '{$thclass}'";
+									@mysql_query($query4, $link);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	echo ($affected > 0) ? "OK" : "ERROR";
+?>

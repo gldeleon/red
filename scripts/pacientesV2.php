@@ -1,0 +1,347 @@
+<?php
+
+//die(print_r($_SERVER));
+//$argv = filter_input(INPUT_SERVER,'argv',FILTER_REQUIRE_ARRAY);
+
+/** /
+  $argv = $_SERVER['argv'];
+
+  if ($argv === FALSE) {
+  die("OLA K ASE....false\n");
+  }
+  if (is_null($argv)) {
+  die("OLA K ASE....null\n");
+  }
+  if (!is_array($argv)) {
+  die("OLA K ASE....!array\n");
+  }
+
+  if ($argv === FALSE || is_null($argv) || !is_array($argv)) {
+  die("OLA K ASE");
+  }
+
+  $whoArr = explode("=", $argv[1]);
+  $who = (isset($whoArr[1])) ? $whoArr[1] : NULL;
+  if (empty($who) || $who != "cr0n") {
+  die("OLA K ASE OTRA VEZ");
+  }
+  /* */
+//die('que desea?');
+###Para Produccion
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/Enumeration.php";
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/MySQLConnectionFailedException.php";
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/MySQLException.php";
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/MySQL.php";
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/RequestTypeEnum.php";
+//require_once dirname(__FILE__) . "/" . "../../dentalia3/BadRequestException.php";
+###Para Local
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/Enumeration.php";
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/MySQLConnectionFailedException.php";
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/MySQLException.php";
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/MySQL.php";
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/RequestTypeEnum.php";
+require_once dirname(__FILE__) . "/" . "../../dentalia3_mysql/BadRequestException.php";
+
+ini_set('memory_limit', '520M');
+set_time_limit(65 * 60);
+
+$db = MySQL::getInstance('DENT');
+$dbRed = MySQL::getInstance('KOBE');
+
+if (actualizaPlanesYconvenios($db, $dbRed) === FALSE)
+    die("<p>ERROR</p>\n");
+
+$resumen = array(
+    'encontrados' => 0
+    , 'revisados' => 0
+    , 'insert' => 0
+    , 'update' => 0
+    , 'conflicto' => 0
+    , 'error' => 0
+    , 'errores' => array()
+);
+
+$companias = '';
+
+//Buscamos las compañias activas
+$sqlBuscaCom = "SELECT com_id FROM company WHERE com_active = 'ACTIVO'";
+if (($reCompanias = $db->query($sqlBuscaCom)) && $db->count($reCompanias) > 0) {
+    while ($rowCompania = $db->fetch($reCompanias)) {
+        $companias .= $rowCompania["com_id"] . ",";
+    }
+    $companias = substr($companias, 0, -1);
+} else {
+    die("<p>No hay compañias activas</p>\n");
+}
+
+#Quitamos convenios a todo mundo
+$sqlQuitaAgr = "UPDATE patient SET agr_id = 0,com_id = 0 WHERE agr_id != 0;";
+if (!$dbRed->query($sqlQuitaAgr)) {
+    echo '<p>Error al reiniciar convenios</p>';
+}
+
+
+
+//obtener pacientes de dentalia
+$sql = "SELECT per.per_name
+	,per.per_lastname
+	,per.per_surename
+	,pag.agr_id
+	,per.per_complete
+	,pat.pat_date
+	,per.per_gender
+	,per.per_birthday
+	,coa.com_id
+	,pat.pat_key
+	,pat.pat_id
+	,pat.pat_active
+	,pag.insurance_num
+	FROM patient pat
+	LEFT JOIN patagreement pag ON pag.pat_id = pat.pat_id
+	LEFT JOIN person per ON pat.person_id = per.person_id
+	LEFT JOIN agreement agr ON agr.agr_id = pag.agr_id
+	LEFT JOIN comagree coa ON agr.agr_id = coa.agr_id AND coa.active = 'ACTIVO'
+	WHERE pag.pat_id IS NOT NULL
+	AND pag.active = 'ACTIVO'
+	AND pat.pat_active = 'ACTIVO'
+	AND pat.pat_test = 'NO'
+	AND agr.agr_active = 'ACTIVO'
+	AND coa.com_id IN(" . $companias . ")";
+if (($pacientes_dentalia = $db->query($sql)) && $db->count($pacientes_dentalia) > 0) {
+    $resumen['encontrados'] = $db->count($pacientes_dentalia);
+//	echo "Pacientes encontrados: {$resumen['encontrados']}<br/>";
+    while ($paciente_dentalia = $db->fetch($pacientes_dentalia)) {
+        $sb_paciente = "[" . str_pad(($resumen['revisados'] ++), 7, '0', STR_PAD_LEFT) . " " . date('H:i:s') . "] pat_id(pat_key) - {$paciente_dentalia['pat_id']}({$paciente_dentalia['pat_key']}) :: ";
+        //buscamos paciente en red
+        $ejecutar_sql = FALSE;
+        $pat_id_old = $db->clean($paciente_dentalia['pat_key']);
+        $pat_agr_id = (!is_null($paciente_dentalia['agr_id'])) ? $paciente_dentalia['agr_id'] : 0;
+        $pat_com_id = (!is_null($paciente_dentalia['com_id'])) ? $paciente_dentalia['com_id'] : 0;
+        $insurance_num = (!is_null($paciente_dentalia['insurance_num'])) ? $paciente_dentalia['insurance_num'] : 0;
+        $sqlInsertUpdate = "
+			INSERT INTO patient SET
+				 pat_id = '{$pat_id_old}'
+				,pth_id = 0
+				,clc_id = 1
+				,agr_id = '{$pat_agr_id}'
+				,pat_lastname = '" . $db->clean($paciente_dentalia['per_lastname']) . "'
+				,pat_surename = '" . $db->clean($paciente_dentalia['per_surename']) . "'
+				,pat_name = '" . $db->clean($paciente_dentalia['per_name']) . "'
+				,pat_complete = '" . $db->clean($paciente_dentalia['per_complete']) . "'
+				,pat_ldate = '" . $db->clean($paciente_dentalia['pat_date']) . "'
+				,pat_gender = '" . $db->clean($paciente_dentalia['per_gender']) . "'
+				,pat_balance = 0
+				,pat_mail = ''
+				,pat_occupation = NULL
+				,pat_ndate = '" . $db->clean($paciente_dentalia['per_birthday']) . "'
+				,pat_mtstatus = 0
+				,pat_nson = ''
+				,pat_address = ''
+				,pat_okmail = 0
+				,pat_telcontact = ''
+				,com_id = '{$pat_com_id}'
+				,pat_insurance = NULL
+				,pat_id_new = '" . $db->clean($paciente_dentalia['pat_id']) . "'
+				,pat_active = '" . $db->clean($paciente_dentalia['pat_active']) . "'
+				,insurance_num = '" . $db->clean($insurance_num) . "'
+			ON DUPLICATE KEY UPDATE
+				 agr_id = '{$pat_agr_id}'
+				,com_id = '{$pat_com_id}'
+				,pat_id_new = '" . $db->clean($paciente_dentalia['pat_id']) . "'
+				,pat_active = '" . $db->clean($paciente_dentalia['pat_active']) . "'
+				,insurance_num = '" . $db->clean($insurance_num) . "'";
+        try {
+            if (($pacientes_red = $dbRed->query("SELECT * FROM patient WHERE pat_id = '{$pat_id_old}';")) && $dbRed->count($pacientes_red) > 0) {
+                if ($dbRed->count($pacientes_red) > 1) {
+                    //paciente en conflicto/duplicado ERROR
+                    $sb_paciente .= "ERROR/CONFLICTO ";
+                    $resumen['conflicto'] ++;
+                } else {
+                    //paciente encontrado INSERT/UPDATE
+                    $sb_paciente .= "UPDATE ";
+                    $resumen['insert'] ++;
+                    $ejecutar_sql = TRUE;
+                }
+            } else {
+                //paciente no encontrado INSERT
+                $sb_paciente .= "INSERT ";
+                $resumen['update'] ++;
+                $ejecutar_sql = TRUE;
+            }
+            if ($ejecutar_sql) {
+                if (!$dbRed->query($sqlInsertUpdate)) {
+                    $sb_paciente .= "ERROR/QUERY :: {$sqlInsertUpdate}";
+                    $resumen['error'] ++;
+                    $resumen['errores'][] = $sb_paciente;
+                }
+            }
+        } catch (MySQLException $mysqle) {
+            //error al insertar paciente ERROR/QUERY
+            $sb_paciente .= "ERROR/QUERY/CATCH :: " . $mysqle->getMessage();
+            $resumen['error'] ++;
+            $resumen['errores'][] = $mysqle;
+        }
+        $sb_paciente .= "<br/>";
+//		echo $sb_paciente;
+    }
+}
+echo "Resumen: <pre>" . print_r($resumen, TRUE) . "</pre>\n";
+
+//Logeamos evento
+$fileName = 'syncConveniosYPats';
+$fichero = dirname(__FILE__) . '/log/' . $fileName . date("Ymd") . '.log';
+$actual = '';
+if (file_exists($fichero)) {
+    $actual = file_get_contents($fichero);
+} else {
+    $fp = fopen($fichero, "a");
+    chmod($fichero, 0775);
+    chgrp($fichero, "www-data");
+    fclose($fp);
+}
+$actual .= "[" . date("Y-m-d H:i:s") . "] " . print_r($resumen, TRUE) . "\n";
+file_put_contents($fichero, $actual);
+
+
+exit;
+
+function actualizaPlanesYconvenios(MySQL $db, MySQL $dbRed) {
+    try {
+        /* ACTUALIZA TABLA company */
+        $sqlBuscaCompany = "SELECT com.com_id, com.usr_id, com.com_name, com.com_rfc,
+				CAST(CONCAT_WS(' ',a.calle,a.no_exterior,a.no_interior,z.zpc_colonia,CONCAT('C.P. ',LPAD(z.zpc_code,5,0)),z.zpc_local,s.stt_name) AS CHAR) AS com_address, NULL AS com_tel,
+				cct.comcontact_name AS com_contact, cct.comcontact_phone AS com_conttel, 0 AS com_agrstage,
+				(CASE com_active WHEN 1 THEN 1 WHEN 2 THEN 0 ELSE 0 END) AS com_active
+				FROM company com
+				LEFT JOIN address a ON a.com_id = com.com_id
+				LEFT JOIN zipcode z ON z.zpc_id = a.zpc_id
+				LEFT JOIN state s ON s.stt_id = z.stt_id
+				LEFT JOIN comcontact cct ON cct.com_id = com.com_id";
+        $dentaliaCompany = '';
+        if (($rsBuscaCompany = $db->query($sqlBuscaCompany)) && $db->count($rsBuscaCompany) > 0) {
+            while ($rowBuscaCompany = $db->fetch($rsBuscaCompany)) {
+                $dentaliaCompany .= "(" . substr(parseRowToValues($rowBuscaCompany, $dbRed), 0, -1) . "),\n";
+            }
+        }
+        $querysRed[] = "DELETE FROM kobemxco_red.company;";
+        $querysRed[] = "INSERT INTO kobemxco_red.company VALUES
+				" . substr($dentaliaCompany, 0, -2) . "";
+
+        /* ACTUALIZA TABLA agreement */
+        $sqlBuscaAgreement = "SELECT
+				agr.agr_id,
+				ca.com_id,
+				agr.usr_id,
+				agr.agreetype_id AS atp_id,
+				agr.agrcov_id AS agl_id,
+				agr.agr_name,
+				agr.agr_desc,
+				agr.agr_req AS agr_reqs,
+				agr.agr_validity_ini AS agr_ini,
+				agr.agr_validity_end AS agr_end,
+				agr.emp_id,
+				(CASE agr_active WHEN 1 THEN 1 WHEN 2 THEN 0 ELSE 0 END) AS agr_active,
+				(CASE agr.validity_type WHEN 'INDIVIDUAL' THEN 1 WHEN 'GRUPAL' THEN 0 ELSE 0 END) AS tipo_vigencia,
+				0 AS agr_pago,
+				al.legend AS agr_reclegend,
+				0 AS comgrp_id
+				FROM dentalia.agreement agr
+				LEFT JOIN dentalia.comagree ca ON ca.agr_id = agr.agr_id
+				LEFT JOIN dentalia.agreelegend al ON al.agr_id = agr.agr_id
+				WHERE ca.com_id IS NOT NULL
+				group by agr_id";
+        $dentaliaAgreement = '';
+        if (($rsBuscaAgreement = $db->query($sqlBuscaAgreement)) && $db->count($rsBuscaAgreement) > 0) {
+            while ($rowBuscaAgreement = $db->fetch($rsBuscaAgreement)) {
+                foreach ($rowBuscaAgreement as $key => $value) {
+                    $rowBuscaAgreement[$key] = $db->clean($value);
+                }
+                $dentaliaAgreement .= "(" . substr(parseRowToValues($rowBuscaAgreement, $dbRed), 0, -1) . "),\n";
+            }
+        }
+        $querysRed[] = "DELETE FROM kobemxco_red.agreement";
+        $querysRed[] = "INSERT INTO kobemxco_red.agreement VALUES
+				" . substr($dentaliaAgreement, 0, -2) . "";
+
+        /* ACTUALIZA TABLA agreetreat */
+        $sqlBuscaAgreetreat = "SELECT r.`no`,r.agr_id,r.trt_id,r.trt_discount,r.spc_price,r.tgr_times,r.tgr_spcdiscount,r.cero,r.fecha FROM(
+						SELECT null AS `no`, atr.agr_id, atr.trt_id, atr.trt_discount, atr.spc_price, IF(atc.agrtrt_times IS NULL,0,atc.agrtrt_times) AS tgr_times,
+											   IF(atc.agrtrt_discount IS NULL, 0, atc.agrtrt_discount) AS tgr_spcdiscount, 0 AS cero, CURDATE() AS fecha,'X' AS id
+										FROM dentalia.agreetreat atr
+										LEFT JOIN dentalia.agrtrtcount atc
+										ON atc.agrtreat_id = atr.agrtreat_id
+										WHERE atr.active = 'ACTIVO'
+										-- AND atr.agr_id = 426
+
+						UNION
+						SELECT
+						null, agt.agr_id, trt_id, tgr_discount AS trt_discount, 0 AS spc_price, tgr_times,
+											   tgr_spcdiscount, 1 AS cero, CURDATE() AS fecha,'A' AS id
+						FROM dentalia.agreetrtgrp agt
+						RIGHT JOIN dentalia.treatgroup g ON agt.tgr_id = g.tgr_id
+						RIGHT JOIN dentalia.treatgrouptx gt ON gt.tgr_id = g.tgr_id
+						WHERE agt.agr_id IS NOT NULL
+						AND agt.active = 'ACTIVO'
+						-- AND agt.agr_id = 426
+						ORDER BY `trt_id`,id ASC
+						)AS r
+						GROUP BY agr_id,trt_id;";
+        $querysRed[] = "DELETE FROM kobemxco_red.agreetreat";
+        if (($rsBuscaAgreetreat = $db->query($sqlBuscaAgreetreat)) && $db->count($rsBuscaAgreetreat) > 0) {
+            while ($rowBuscaAgreetreat = $db->fetch($rsBuscaAgreetreat)) {
+                $querysRed[] = "INSERT INTO kobemxco_red.agreetreat VALUES
+					(" . substr(parseRowToValues($rowBuscaAgreetreat, $dbRed), 0, -1) . ")";
+            }
+        }
+
+
+
+        /* ACTUALIZA TABLA agreetype */
+        $sqlBuscaAgreetype = "SELECT agreetype_id AS atp_id, 1 AS usr_id,agreetype_name AS atp_name FROM dentalia.agreetype WHERE active = 1";
+        $dentaliaAgreetype = '';
+        if (($rsBuscaAgreetype = $db->query($sqlBuscaAgreetype)) && $db->count($rsBuscaAgreetype) > 0) {
+            while ($rowBuscaAgreetype = $db->fetch($rsBuscaAgreetype)) {
+                $dentaliaAgreetype .= "(" . substr(parseRowToValues($rowBuscaAgreetype, $dbRed), 0, -1) . "),\n";
+            }
+        }
+        $querysRed[] = "DELETE FROM kobemxco_red.agreetype";
+        $querysRed[] = "INSERT INTO kobemxco_red.agreetype VALUES
+				" . substr($dentaliaAgreetype, 0, -2) . "
+			;";
+        foreach ($querysRed as $sql) {
+            $dbRed->query($sql);
+        }
+        return TRUE;
+    } catch (Exception $e) {
+        echo "<pre>" . print_r($e, TRUE) . "</pre>\n";
+        echo "<p>Excepcion: " . $e->getMessage() . "</p>\n";
+        echo "<p>Archivo: " . $e->getFile() . "</p>\n";
+        echo "<p>Linea: " . $e->getLine() . "</p>\n";
+        return FALSE;
+    }
+}
+
+function parseRowToValues($rowBusca, MySQL $dbRed) {
+    $dentaliaValues = '';
+    foreach ($rowBusca as $value) {
+        if (is_numeric($value)) {
+            $dentaliaValues .= $value . ",";
+        } else if (is_string($value)) {
+            $dentaliaValues .= "'" . $dbRed->clean($value) . "',";
+        } else if (is_null($value)) {
+            $dentaliaValues .= "NULL,";
+        } else {
+            $dentaliaValues .= "NULL,";
+        }
+    }
+    return $dentaliaValues;
+}
+
+function kDev() {
+//	$remoteAddr = filter_input(INPUT_SERVER,'REMOTE_ADDR');
+    $remoteAddr = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : NULL;
+    if (php_sapi_name() == 'cli' || isset($remoteAddr) && in_array($remoteAddr, array('::1', 'localhost', '127.0.0.1', '187.162.35.59', '201.156.225.50'))) {
+        return TRUE;
+    }
+    return FALSE;
+}

@@ -1,0 +1,686 @@
+div.cat_list {
+	text-align: left;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #D75BA2;
+	font-size: 12px;
+	min-width: 113px;
+	padding-left: 5px;
+	line-height: 20px;
+	border: 1px solid #FFF;
+	border-left: none;
+}
+
+ul.cat_list {
+	text-align: left;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+li.cat_list {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	width: 112px;
+	height: 20px;
+	font-size: inherit;
+	padding-left: 5px;
+	margin-top: 0px;
+	position: relative;
+	background-color: transparent;
+	border-right: 1px solid #FFF;
+}
+
+li.cat_list > ul.cat_tx_list {
+	font-size: 11px;
+	padding: 0px;
+	border: 1px solid #811E53;
+	left: 110px;
+	width: 140px;
+	z-index: 1000;
+	position: relative;
+	display: none;
+}
+
+li.cat_list:hover {
+	background-color: #E5E5E5;
+	border-right: 1px solid #811E53;
+}
+
+li.cat_list:hover > ul.cat_tx_list {
+	visibility: visible;
+	display: block;
+}
+
+li.cat_list:hover > div.cat_list_icon {
+	border: 1px solid #000;
+}
+
+li.cat_list:hover > div.cat_list_text {
+	color: #000;
+}
+
+div.cat_list_icon {
+	border: 1px solid #000;
+	left: 0px;
+	top: 1px;
+	position: absolute;
+	display: inline;
+}
+
+div.cat_list_text {
+	left: 20px;
+	top: 4px;
+	position: absolute;
+	display: inline;
+	overflow: hidden;
+	color: #000;
+	font-size: 10px;
+}
+
+li.cat_tx_list {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	height: 20px;
+	line-height: 20px;
+	font-size: inherit;
+	padding-left: 5px;
+	margin-top: 0px;
+	position: relative;
+}
+
+li.cat_tx_list:hover {
+	border: 1px solid #FFF;
+}
+
+div.tx_comb {
+	display: block;
+	width: 669px;
+	height: 20px;
+	background-color: #E5E5E5;
+	border: 1px solid #FFF;
+	border-left: none;
+	border-right: none;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: left;
+	line-height: 20px;
+	padding-left: 5px;
+}
+
+tr.report_item {
+	background-color: #FFF;
+}
+
+tr.report_item:hover {
+	background-color: #E5E5E5;
+}
+
+table.header {
+	border: none;
+	border-spacing: 0px;
+	empty-cells: show;
+	background-color: #FFF;
+	border-right: 1px solid #E6701D;
+	border-bottom: 1px solid #E6701D;
+}
+
+td.content {
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+	font-size: 12px;
+	min-width: 23px;
+	padding-left: 5px;
+	line-height: 20px;
+	vertical-align: top;
+	background-color: #FFD773;
+	border: 1px solid #E6701D;
+}
+
+div#actTxTitle, div#prgTxTitle {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 193px;
+	height: 19px;
+	text-align: center;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 11px;
+	line-height: 19px;
+	background-color: #811E53;
+}
+
+div#actTx, div#prgTx {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 191px;
+	height: 150px;
+	border: 1px solid #811E53;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+div#actTx {
+	height: 140px;
+}
+
+div#actTxHeader, div#prgTxHeader {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 175px;
+	height: 18px;
+}
+
+div#actTxHeader table, div#prgTxHeader table {
+	border: 0px;
+	border-spacing: 1px;
+	empty-cells: hide;
+	background-color: #FFF;
+}
+
+div#actTxHeader table td, div#prgTxHeader table td {
+	text-align: center;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 10px;
+	line-height: 18px;
+	vertical-align: top;
+	background-color: #D75BA2;
+}
+
+div#txControl {
+	position: relative;
+	left: 141px;
+	top: 1px;
+	height: 17px;
+	width: 54px;
+	margin-bottom: 1px;
+}
+
+div#txToUp, div#txToDown, div#txDelete {
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	top: 0px;
+}
+
+div#txToUp {
+	left: 0px;
+	background-image: url('images/up.png');
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+div#txToDown {
+	left: 18px;
+	background-image: url('images/down.png');
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+div#txDelete {
+	left: 36px;
+	background-image: url('images/delete.png');
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+div#dentalChartPanel, div#txListPanel, div#dentalSlice {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 478px;
+	min-height: 330px;
+	border: 1px solid #811E53;
+	text-align: center;
+}
+
+div#dentalSlice {
+	position: absolute;
+	left: 125px;
+	top: 112px;
+	min-height: 305px;
+	background-color: #FFF;
+}
+
+div#adlclass, div#infclass, div#tmpclass {
+	position: absolute;
+	border: 1px solid #084C9D;
+	border-left: none;
+	border-top: none;
+	color: #084C9D;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100px;
+	height: 16px;
+	line-height: 16px;
+	background-color: #FFF;
+	display: inline;
+	margin-bottom: 5px;
+	cursor: pointer;
+	top: 0px;
+}
+
+div#adlclass {
+	left: 0px;
+}
+
+div#infclass {
+	left: 101px;
+}
+
+div#tmpclass {
+	left: 202px;
+	width: 276px;
+	border-right: none;
+	background-color: #FFF;
+	cursor: default;
+}
+
+div#posrh, div#poslf, div#posrhSlice, div#poslfSlice {
+	position: absolute;
+	border: none;
+	color: #084C9D;
+	font-size: 11px;
+	font-weight: bold;
+	width: 100px;
+	height: 16px;
+	line-height: 16px;
+	display: inline;
+}
+
+div#posrh, div#posrhSlice {
+	top: 19px;
+	left: 2px;
+	text-align: left;
+}
+
+div#poslf, div#poslfSlice {
+	top: 19px;
+	left: 375px;
+	text-align: right;
+}
+
+div#posrhSlice, div#poslfSlice {
+	top: 0px;
+}
+
+div#dChartCanvas, div#dChartCanvasSlice {
+	border: none;
+	background-color: #FFF;
+	position: relative;
+	z-index: 100;
+}
+
+div#C1, div#C2, div#C3, div#C4, div#C1Slice, div#C2Slice, div#C3Slice, div#C4Slice {
+	width: 235px;
+	height: 120px;
+	position: absolute;
+	background-color: #FFF;
+	z-index: 800;
+}
+
+div#C1:hover, div#C2:hover, div#C3:hover, div#C4:hover, 
+div#C1Slice:hover, div#C2Slice:hover, div#C3Slice:hover, div#C4Slice:hover {
+	background-color: #FFF;
+}
+
+div#C1, div#C1Slice {
+	top: 35px;
+	left: 3px;
+	border-right: 1px solid #811E53;
+	border-bottom: 1px solid #811E53;
+}
+
+div#C2, div#C2Slice {
+	top: 35px;
+	left: 239px;
+	border-left: 1px solid #811E53;
+	border-bottom: 1px solid #811E53;
+}
+
+div#C1Slice, div#C2Slice {
+	top: 16px;
+}
+
+div#C4, div#C4Slice {
+	top: 156px;
+	left: 3px;
+	border-right: 1px solid #811E53;
+	border-top: 1px solid #811E53;
+}
+
+div#C3, div#C3Slice {
+	top: 156px;
+	left: 239px;
+	border-left: 1px solid #811E53;
+	border-top: 1px solid #811E53;
+}
+
+div#C4Slice, div#C3Slice {
+	top: 137px;
+}
+
+div.tooth {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	z-index: 200;
+}
+
+div.thtSectionV, div.thtSectionD, div.thtSectionM, div.thtSectionL, 
+div.thtSectionO, div.thtSectionNumSup, div.thtSectionNumInf, 
+div.thtRoot, div.thtPost {
+	display: block;
+	border: 1px solid #000;
+	position: absolute;
+	background-color: #FFF;
+}
+
+div.thtSectionV {
+	left: 0px;
+	width: 25px;
+	height: 8px;
+}
+
+div.thtSectionL {
+	left: 0px;
+	width: 25px;
+	height: 8px;
+}
+
+div.thtSectionD {
+	left: 0px;
+	width: 8px;
+	height: 9px;
+}
+
+div.thtSectionO {
+	left: 8px;
+	width: 9px;
+	height: 9px;
+}
+
+div.thtSectionM {
+	left: 17px;
+	width: 8px;
+	height: 9px;
+}
+
+div.thtSectionNumSup, div.thtSectionNumInf {
+	left: 0px;
+	width: 25px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+	margin-top: 3px;
+	border: 1px solid #C0C0C0;
+	background-color: #FFF;
+	z-index: 300;
+}
+
+div.thtSectionNumSup {
+	/*top: 26px;*/
+}
+
+div.thtSectionNumInf {
+	top: 0px;
+}
+
+div.thtRoot {
+	width: 25px;
+	height: 50px;
+	border: 1px solid #FFF;
+}
+
+div.thtPost {
+	width: 25px;
+	height: 10px;
+	border: 1px solid #FFF;
+}
+
+div.catTx {
+	position: relative;
+	border: 1px solid #ABD9E9;
+	left: 5px;
+	top: 5px;
+	width: 465px;
+	min-height: 38px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+div#catTx {
+	max-height: 317px;
+}
+
+div#dcAvalTx {
+	top: 285px;
+	max-height: 130px;
+}
+
+div#dcSelTx {
+	top: 260px;
+	max-height: 40px;
+}
+
+div#dcAvalTxTitle, div#catTxTitle, div#dcSelTxTitle {
+	height: 19px;
+	text-align: center;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 11px;
+	line-height: 19px;
+	background-color: #084C9D;
+}
+
+div.txListTr {
+	position: absolute;
+	border: none;
+	left: 1px;
+	width: 446px;
+	height: 18px;
+	background-color: #ABD9E9;
+}
+
+div.txListTr:hover {
+	background-color: #E5E5E5;
+}
+
+div.txListTd1 {
+	position: absolute;
+	font-size: 10px;
+	color: #084C9D;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: left;
+	padding-left: 5px;
+	top: 0px;
+	left: 0px;
+	width: 345px;
+	border: none;
+	display: block;
+}
+
+div.txListTd2 {
+	position: absolute;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: left;
+	top: 0px;
+	left: 350px;
+	width: 40px;
+	color: #000;
+	border: none;
+	display: block;
+}
+
+div.txListTd3 {
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	left: 390px;
+	width: 17px;
+	height: 18px;
+	display: block;
+}
+
+div.txListTd4 {
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	left: 407px;
+	width: 17px;
+	height: 18px;
+	display: block;
+}
+
+div.txListTd3 > img, div.txListTd4 > img {
+	margin-top: 1px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+div.txListTd5 {
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	left: 424px;
+	width: 21px;
+	height: 18px;
+	display: block;
+}
+
+div.txListTd5 > img {
+	margin-top: 1px;
+	width: 19px;
+	height: 16px;
+	cursor: pointer;
+}
+
+div.txListTd2 > input[type="text"] {
+	border: 1px solid #084C9D;
+	width: 30px;
+	height: 14px;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+div.actTxItem, div.prgTxItem {
+	position: absolute;
+	left: 1px;
+	width: 200px;
+	height: 20px;
+	background-color: #E5E5E5;
+	font-size: 10px !important;
+	overflow: hidden;
+}
+
+div.actTxItem:hover, div.prgTxItem:hover {
+	background-color: #ABD9E9;
+}
+
+div.oListTx_Tx {
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	height: 18px;
+	width: 108px;
+	line-height: 18px;
+	padding-left: 3px;
+	text-align: left;
+	font-size: 10px !important;
+}
+
+div.oListTx_Th {
+	position: absolute;
+	left: 113px;
+	top: 1px;
+	height: 18px;
+	width: 30px;
+	line-height: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 10px !important;
+}
+
+div.oListTx_Sess {
+	position: absolute;
+	left: 144px;
+	top: 1px;
+	height: 18px;
+	width: 29px;
+	line-height: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 10px !important;
+}
+
+div#dentalChartSelector {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	height: 19px;
+	width: 480px;
+	margin-bottom: 1px;
+	background-color: #D75BA2;
+}
+
+div#selBudget {
+	position: absolute;
+	left: 1px;
+	top: 0px;
+	width: 100px;
+	height: 19px;
+	line-height: 19px;
+	color: #084C9D;
+	font-size: 12px;
+	font-weight: bold;
+	border-right: 1px solid #FFF;
+	cursor: pointer;
+}
+
+div#selDentalChart {
+	position: absolute;
+	left: 102px;
+	top: 0px;
+	width: 100px;
+	height: 19px;
+	line-height: 19px;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	border-right: 1px solid #FFF;
+	cursor: pointer;
+}
+
+div#selHistoricTx {
+	position: absolute;
+	left: 203px;
+	top: 0px;
+	width: 100px;
+	height: 19px;
+	line-height: 19px;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	border-right: 1px solid #FFF;
+	cursor: pointer;
+}
+
+div#budgetList {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+	width: 454px;
+}
