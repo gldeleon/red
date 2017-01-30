@@ -3,8 +3,8 @@
 		/* Configuracion de la base de datos */
 		var $db_type = "mysql";
 		var $db_server = "localhost";
-		var $db_user = "kobemxco_dental";
-		var $db_passwd = "*h!qj6e29usE";
+		var $db_user = "";
+		var $db_passwd = "";
 		var $db_name = "kobemxco_red";
 
 		/* Configuracion de la aplicacion */
