@@ -5,7 +5,7 @@
 		var $db_server = "localhost";
 		var $db_user = "";
 		var $db_passwd = "";
-		var $db_name = "kobemxco_red";
+		var $db_name = "";
 
 		/* Configuracion de la aplicacion */
 		var $app_url = "/";
